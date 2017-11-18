@@ -2,7 +2,7 @@
 package Formularios;
 
 import Clases.Mysql;
-import FeatherDelevoper.Registro_Developer;
+import FeatherDelevoper.Registro_Dev;
 import FeatherStore.Registro;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -13,11 +13,10 @@ public class Login extends javax.swing.JFrame {
     public int x,y;
     public Mysql conn;
     public Registro regis;
-    public Registro_Developer RegisDel;
 
     public Login() {
         conn = new Mysql();
-        conn.connection("feahterstore", "root", "");
+        conn.connection("featherstore", "root", "");
         setUndecorated(true);
         setLocationRelativeTo(null);
         initComponents();
@@ -80,7 +79,6 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setText("Contraseña :");
 
         Contraseña.setBackground(new java.awt.Color(69, 85, 140));
-        Contraseña.setText("00000000000");
         Contraseña.setBorder(null);
         Contraseña.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -94,7 +92,6 @@ public class Login extends javax.swing.JFrame {
         });
 
         Usuario.setBackground(new java.awt.Color(69, 85, 140));
-        Usuario.setText("Nickname");
         Usuario.setBorder(null);
         Usuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -333,11 +330,20 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Registrarse_DeveloperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Registrarse_DeveloperActionPerformed
-       
+        conn.closeConnection();
+        Registro_Dev x = new Registro_Dev();
+        x.setVisible(true);
+        x.setLocation(this.getLocation());
+        this.dispose();
+        
     }//GEN-LAST:event_Registrarse_DeveloperActionPerformed
 
     private void RegistrarseActionPerformed(java.awt.event.ActionEvent evt) {
-
+       conn.closeConnection();
+       regis = new Registro();
+       regis.setLocation(this.getLocation());
+       regis.setVisible(true);
+       this.dispose();
     }
     ////
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {System.exit(0);}
