@@ -10,7 +10,6 @@ public class Mysql {
     public Mysql(){
         
     }
-    
     public void connection(String db_name,String user,String pass){
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -34,7 +33,32 @@ public class Mysql {
             JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error :c", WARNING_MESSAGE);
         }
     }
-    public boolean validarLogin(String user, String password){
+    public void cargarUser(String user,String password,Usuario user1){
+        String sql = null,y=null;
+        if(user1.getDeveloper()){
+            sql = "Select * from desarrolladores where Username="+"'"+user+"'"+" and Password_="+"'"+password+"'";
+        }
+        else{
+            sql = "Select * from usuarios where Username="+"'"+user+"'"+" and Password_="+"'"+password+"'";
+        }
+        try {
+            Statement st =  Conexion.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                y=null;
+                y = rs.getString("Username");
+                user1.setUsername(y);
+                y = rs.getString("Nombre");
+                user1.setNombre(y);
+                y = rs.getString("Pais");
+                user1.setPais(y);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error", WARNING_MESSAGE);
+
+        }
+    }
+    public boolean validarLogin(String user, String password,Usuario j){
         boolean Login = false;
         String y = "";
         String sql = "Select Password_ from usuarios where Username="+"'"+user+"'"+" and Password_="+"'"+password+"'";
@@ -44,8 +68,22 @@ public class Mysql {
             while(rs.next()){
                 y = rs.getString("Password_");
             }
+            if(password.equals(y)){
+                Login=true;
+                j.setDeveloper("Nel");
+            }
+            else{
+                y="";
+                sql = "Select Password_ from desarrolladores where Username="+"'"+user+"'"+" and Password_="+"'"+password+"'";
+                st =  Conexion.createStatement();
+                rs = st.executeQuery(sql);
+                    while(rs.next()){
+                    y = rs.getString("Password_");
+            }
             if(password.equals(y))
                 Login=true;
+                j.setDeveloper("Yes");
+            }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error al iniciar sesion", WARNING_MESSAGE);
         }

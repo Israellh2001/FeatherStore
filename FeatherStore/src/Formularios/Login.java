@@ -2,7 +2,9 @@
 package Formularios;
 
 import Clases.Mysql;
+import Clases.Usuario;
 import FeatherDelevoper.Registro_Dev;
+import FeatherStore.Menu;
 import FeatherStore.Registro;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -13,6 +15,7 @@ public class Login extends javax.swing.JFrame {
     public int x,y;
     public Mysql conn;
     public Registro regis;
+    public Usuario user1;
 
     public Login() {
         conn = new Mysql();
@@ -22,6 +25,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Feather Logo.png")).getImage());
         setTitle("FeatherStore");
+        user1=new Usuario();
     }
 
 
@@ -88,6 +92,11 @@ public class Login extends javax.swing.JFrame {
         Contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ContraseñaActionPerformed(evt);
+            }
+        });
+        Contraseña.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ContraseñaKeyReleased(evt);
             }
         });
 
@@ -338,6 +347,28 @@ public class Login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Registrarse_DeveloperActionPerformed
 
+    private void ContraseñaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ContraseñaKeyReleased
+        if(evt.getKeyCode()==10){
+            String contra = String.valueOf(Contraseña.getText());
+       String user = Usuario.getText();
+
+       boolean x =  conn.validarLogin(user ,contra,user1);
+       if(x){
+            //JOptionPane.showMessageDialog(null, "Bienvenido", "Usuario Correcto", INFORMATION_MESSAGE);
+            conn.cargarUser(user, contra, user1);
+          //  user1.verDatos();
+            Menu g = new Menu();
+            g.cargarUser(user1);
+            g.setLocation(this.getLocation());
+            g.setVisible(true);
+            this.dispose();
+       }
+       else
+            JOptionPane.showMessageDialog(null, "Usuario incorrecto", "Reinicia la app o verifica los datos :c", INFORMATION_MESSAGE);
+
+        }
+    }//GEN-LAST:event_ContraseñaKeyReleased
+
     private void RegistrarseActionPerformed(java.awt.event.ActionEvent evt) {
        conn.closeConnection();
        regis = new Registro();
@@ -362,9 +393,17 @@ public class Login extends javax.swing.JFrame {
        String contra = String.valueOf(Contraseña.getText());
        String user = Usuario.getText();
 
-       boolean x =  conn.validarLogin(user ,contra);
-       if(x)
-            JOptionPane.showMessageDialog(null, "Bienvenido", "Usuario Correcto", INFORMATION_MESSAGE);
+       boolean x =  conn.validarLogin(user ,contra,user1);
+       if(x){
+           // JOptionPane.showMessageDialog(null, "Bienvenido", "Usuario Correcto", INFORMATION_MESSAGE);
+            conn.cargarUser(user, contra, user1);
+            //user1.verDatos();
+            Menu g = new Menu();
+            g.cargarUser(user1);
+            g.setLocation(this.getLocation());
+            g.setVisible(true);
+            this.dispose();
+       }
        else
             JOptionPane.showMessageDialog(null, "Usuario incorrecto", "Reinicia la app o verifica los datos :c", INFORMATION_MESSAGE);
 
