@@ -1,19 +1,35 @@
 
 package FeatherStore;
 
+import Clases.Mysql;
+import java.awt.CardLayout;
+import Formularios.Busqueda;
 import Clases.Usuario;
+import Formularios.Login;
+import Formularios.Principal_;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 public class Menu extends javax.swing.JFrame {
+    Mysql conn;
     Usuario user;
-
-    public Menu() {
-
+    Busqueda ask;
+    Principal_ main;
+    
+    public Menu(){
         initComponents();
-        setResizable(false);
+       // setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Feather Logo.png")).getImage());
         setTitle("Menu-FeatherStore");
+        conn=new Mysql();
+        conn.connection("FeatherStore","root", "");
+        ask=new Busqueda();
+        ask.setVisible(false);
+        main=new Principal_();
+        main.setVisible(true);
+        jPanel3.add(main);
+        jPanel3.add(ask);
     }
     public void cargarUser(Usuario x){
         user = x;
@@ -45,19 +61,6 @@ public class Menu extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        Juegos = new javax.swing.JLabel();
-        Noticias = new javax.swing.JLabel();
-        Actualizaciones = new javax.swing.JLabel();
-        Para_el_hogar = new javax.swing.JLabel();
-        Desarrollo_Soft = new javax.swing.JLabel();
-        Diseño_Grafico = new javax.swing.JLabel();
-        Audio_Video = new javax.swing.JLabel();
-        Facilidades = new javax.swing.JLabel();
-        Info = new javax.swing.JLabel();
-        FetherStudio = new javax.swing.JLabel();
-        Hardware = new javax.swing.JLabel();
-        Ayuda = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -66,6 +69,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
+        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -183,6 +187,9 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         CerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CerrarSesionMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 CerrarSesionMouseExited(evt);
             }
@@ -192,229 +199,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel4.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 448, 273, 10));
         jPanel4.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 103, 273, 10));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 560));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        Juegos.setBackground(new java.awt.Color(255, 255, 255));
-        Juegos.setText("                  Juegos");
-        Juegos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                JuegosMouseDragged(evt);
-            }
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                JuegosMouseMoved(evt);
-            }
-        });
-        Juegos.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
-            public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
-                JuegosMouseWheelMoved(evt);
-            }
-        });
-        Juegos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                JuegosMouseExited(evt);
-            }
-        });
-
-        Noticias.setBackground(new java.awt.Color(255, 255, 255));
-        Noticias.setText("                     Noticias");
-        Noticias.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                NoticiasMouseMoved(evt);
-            }
-        });
-        Noticias.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                NoticiasMouseExited(evt);
-            }
-        });
-
-        Actualizaciones.setBackground(new java.awt.Color(255, 255, 255));
-        Actualizaciones.setText("                  Actualizaciones");
-        Actualizaciones.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                ActualizacionesMouseMoved(evt);
-            }
-        });
-        Actualizaciones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                ActualizacionesMouseExited(evt);
-            }
-        });
-
-        Para_el_hogar.setBackground(new java.awt.Color(255, 255, 255));
-        Para_el_hogar.setText("                   Para el hogar");
-        Para_el_hogar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                Para_el_hogarMouseMoved(evt);
-            }
-        });
-        Para_el_hogar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Para_el_hogarMouseExited(evt);
-            }
-        });
-
-        Desarrollo_Soft.setBackground(new java.awt.Color(255, 255, 255));
-        Desarrollo_Soft.setText("           Desarrollo de Software");
-        Desarrollo_Soft.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                Desarrollo_SoftMouseMoved(evt);
-            }
-        });
-        Desarrollo_Soft.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Desarrollo_SoftMouseExited(evt);
-            }
-        });
-
-        Diseño_Grafico.setBackground(new java.awt.Color(255, 255, 255));
-        Diseño_Grafico.setText("                 Diseño grafico");
-        Diseño_Grafico.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                Diseño_GraficoMouseMoved(evt);
-            }
-        });
-        Diseño_Grafico.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Diseño_GraficoMouseExited(evt);
-            }
-        });
-
-        Audio_Video.setBackground(new java.awt.Color(255, 255, 255));
-        Audio_Video.setText("                  Audio y video");
-        Audio_Video.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                Audio_VideoMouseMoved(evt);
-            }
-        });
-        Audio_Video.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Audio_VideoMouseExited(evt);
-            }
-        });
-
-        Facilidades.setBackground(new java.awt.Color(255, 255, 255));
-        Facilidades.setText("                  Facilidades");
-        Facilidades.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                FacilidadesMouseMoved(evt);
-            }
-        });
-        Facilidades.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                FacilidadesMouseExited(evt);
-            }
-        });
-
-        Info.setBackground(new java.awt.Color(255, 255, 255));
-        Info.setText("             Sobre la aplicación");
-        Info.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                InfoMouseMoved(evt);
-            }
-        });
-        Info.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                InfoMouseExited(evt);
-            }
-        });
-
-        FetherStudio.setBackground(new java.awt.Color(255, 255, 255));
-        FetherStudio.setText("            Sobre FetherStudio");
-        FetherStudio.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                FetherStudioMouseMoved(evt);
-            }
-        });
-        FetherStudio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                FetherStudioMouseExited(evt);
-            }
-        });
-
-        Hardware.setBackground(new java.awt.Color(255, 255, 255));
-        Hardware.setText("                Sobre Hardware");
-        Hardware.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                HardwareMouseMoved(evt);
-            }
-        });
-        Hardware.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                HardwareMouseExited(evt);
-            }
-        });
-
-        Ayuda.setBackground(new java.awt.Color(255, 255, 255));
-        Ayuda.setText("                      Ayuda");
-        Ayuda.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                AyudaMouseMoved(evt);
-            }
-        });
-        Ayuda.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                AyudaMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Juegos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Desarrollo_Soft, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                    .addComponent(Info, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Diseño_Grafico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Noticias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(FetherStudio, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Audio_Video, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Hardware, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Actualizaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(Facilidades, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Para_el_hogar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Ayuda, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Noticias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Actualizaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Para_el_hogar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Juegos, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Audio_Video, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Desarrollo_Soft, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Diseño_Grafico, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Facilidades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Hardware, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                    .addComponent(FetherStudio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Info, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Ayuda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 37, 830, 520));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 570));
 
         jPanel2.setBackground(new java.awt.Color(69, 85, 140));
 
@@ -427,6 +212,11 @@ public class Menu extends javax.swing.JFrame {
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
+            }
+        });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
             }
         });
 
@@ -456,7 +246,7 @@ public class Menu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(231, Short.MAX_VALUE))
+                .addContainerGap(271, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -479,10 +269,39 @@ public class Menu extends javax.swing.JFrame {
             .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 830, 40));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 870, 40));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 870, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 530, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 870, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        if(evt.getKeyCode()==10){
+            ask.setVisible(true);
+            main.setVisible(false);
+        }
+    }//GEN-LAST:event_jTextField1KeyReleased
+
+    private void CerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarSesionMouseClicked
+        Login x = new Login();
+        x.setLocation(getLocation());
+        x.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CerrarSesionMouseClicked
 
     private void PerfilMouseMoved(java.awt.event.MouseEvent evt) {Perfil.setForeground(new java.awt.Color(255, 255, 255));}
     private void PerfilMouseExited(java.awt.event.MouseEvent evt) {Perfil.setForeground(new java.awt.Color(0,0,0));}
@@ -492,59 +311,21 @@ public class Menu extends javax.swing.JFrame {
     private void Mis_aplicacionesMouseExited(java.awt.event.MouseEvent evt) {Mis_aplicaciones.setForeground(new java.awt.Color(0,0,0));}
     private void PagoMouseMoved(java.awt.event.MouseEvent evt) {Pago.setForeground(new java.awt.Color(255, 255, 255));}
     private void PagoMouseExited(java.awt.event.MouseEvent evt) {Pago.setForeground(new java.awt.Color(0,0,0));}
-    private void FetherDeveloperMouseMoved(java.awt.event.MouseEvent evt) {if(user.getDeveloper()){Pago.setForeground(new java.awt.Color(255, 255, 255));}else{FetherDeveloper.setCursor(Cursor.getDefaultCursor());}}
-    private void FetherDeveloperMouseExited(java.awt.event.MouseEvent evt) {if(user.getDeveloper()){Pago.setForeground(new java.awt.Color(0,0,0));}}
+    private void FetherDeveloperMouseMoved(java.awt.event.MouseEvent evt) {if(user.getDeveloper()){FetherDeveloper.setForeground(new java.awt.Color(255, 255, 255));}else{FetherDeveloper.setCursor(Cursor.getDefaultCursor());}}
+    private void FetherDeveloperMouseExited(java.awt.event.MouseEvent evt) {if(user.getDeveloper()){FetherDeveloper.setForeground(new java.awt.Color(0,0,0));}}
     private void CerrarSesionMouseMoved(java.awt.event.MouseEvent evt) {CerrarSesion.setForeground(new java.awt.Color(255, 255, 255));}
     private void CerrarSesionMouseExited(java.awt.event.MouseEvent evt) {CerrarSesion.setForeground(new java.awt.Color(0,0,0));}
     private void ConfiguracionMouseMoved(java.awt.event.MouseEvent evt) {Configuracion.setForeground(new java.awt.Color(255, 255, 255));}
     private void ConfiguracionMouseExited(java.awt.event.MouseEvent evt) {Configuracion.setForeground(new java.awt.Color(0,0,0));}
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {}
-    private void JuegosMouseDragged(java.awt.event.MouseEvent evt) {}
-    private void JuegosMouseMoved(java.awt.event.MouseEvent evt) {Juegos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-    private void JuegosMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {}
-    private void JuegosMouseExited(java.awt.event.MouseEvent evt) {Juegos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-    private void NoticiasMouseMoved(java.awt.event.MouseEvent evt) {Noticias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-    private void NoticiasMouseExited(java.awt.event.MouseEvent evt) {Noticias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-    private void ActualizacionesMouseMoved(java.awt.event.MouseEvent evt) {Actualizaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-    private void ActualizacionesMouseExited(java.awt.event.MouseEvent evt) {Actualizaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-    private void Para_el_hogarMouseMoved(java.awt.event.MouseEvent evt) {Para_el_hogar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-    private void Para_el_hogarMouseExited(java.awt.event.MouseEvent evt) {Para_el_hogar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-    private void Desarrollo_SoftMouseMoved(java.awt.event.MouseEvent evt) {Desarrollo_Soft.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-    private void Desarrollo_SoftMouseExited(java.awt.event.MouseEvent evt) {Desarrollo_Soft.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-    private void Diseño_GraficoMouseMoved(java.awt.event.MouseEvent evt) {Diseño_Grafico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-    private void Diseño_GraficoMouseExited(java.awt.event.MouseEvent evt) {Diseño_Grafico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-    private void Audio_VideoMouseMoved(java.awt.event.MouseEvent evt) {Audio_Video.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-    private void Audio_VideoMouseExited(java.awt.event.MouseEvent evt) {Audio_Video.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-    private void FacilidadesMouseMoved(java.awt.event.MouseEvent evt) {Facilidades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-    private void FacilidadesMouseExited(java.awt.event.MouseEvent evt) {Facilidades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-    private void InfoMouseMoved(java.awt.event.MouseEvent evt) {Info.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-    private void InfoMouseExited(java.awt.event.MouseEvent evt) {Info.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-    private void FetherStudioMouseMoved(java.awt.event.MouseEvent evt) {FetherStudio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-    private void FetherStudioMouseExited(java.awt.event.MouseEvent evt) {FetherStudio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-    private void HardwareMouseMoved(java.awt.event.MouseEvent evt) {Hardware.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-    private void HardwareMouseExited(java.awt.event.MouseEvent evt) {Hardware.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-    private void AyudaMouseMoved(java.awt.event.MouseEvent evt) {Ayuda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-    private void AyudaMouseExited(java.awt.event.MouseEvent evt) {Ayuda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Actualizaciones;
-    private javax.swing.JLabel Audio_Video;
-    private javax.swing.JLabel Ayuda;
     private javax.swing.JLabel CerrarSesion;
     private javax.swing.JLabel Configuracion;
-    private javax.swing.JLabel Desarrollo_Soft;
-    private javax.swing.JLabel Diseño_Grafico;
     private javax.swing.JLabel Explorar_;
-    private javax.swing.JLabel Facilidades;
     private javax.swing.JLabel FetherDeveloper;
-    private javax.swing.JLabel FetherStudio;
-    private javax.swing.JLabel Hardware;
-    private javax.swing.JLabel Info;
-    private javax.swing.JLabel Juegos;
     private javax.swing.JLabel Mis_aplicaciones;
     private javax.swing.JLabel Nombre2;
-    private javax.swing.JLabel Noticias;
     private javax.swing.JLabel Pago;
-    private javax.swing.JLabel Para_el_hogar;
     private javax.swing.JLabel Perfil;
     private javax.swing.JLabel Username2;
     private javax.swing.JLabel jLabel20;
@@ -553,8 +334,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
