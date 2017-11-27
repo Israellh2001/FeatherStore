@@ -29,6 +29,9 @@ public class Usuario {
     public String getUsername(){
         return Username;
     }
+    public String getPais(){
+        return Pais;
+    }
     public void verDatos(){
         System.out.println(Username+"___"+Nombre+"___"+Pais);
     }

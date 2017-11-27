@@ -6,6 +6,7 @@ import java.awt.CardLayout;
 import Formularios.Busqueda;
 import Clases.Usuario;
 import Formularios.Login;
+import Formularios.Perfil;
 import Formularios.Principal_;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
@@ -15,6 +16,7 @@ public class Menu extends javax.swing.JFrame {
     Mysql conn;
     Usuario user;
     Busqueda ask;
+    Perfil perf;
     Principal_ main;
     
     public Menu(){
@@ -25,9 +27,12 @@ public class Menu extends javax.swing.JFrame {
         conn=new Mysql();
         conn.connection("FeatherStore","root", "");
         ask=new Busqueda();
+        perf = new Perfil();
+        perf.setVisible(false);
         ask.setVisible(false);
         main=new Principal_();
         main.setVisible(true);
+        jPanel3.add(perf);
         jPanel3.add(main);
         jPanel3.add(ask);
     }
@@ -93,6 +98,9 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         Perfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PerfilMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 PerfilMouseExited(evt);
             }
@@ -302,6 +310,12 @@ public class Menu extends javax.swing.JFrame {
         x.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CerrarSesionMouseClicked
+
+    private void PerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilMouseClicked
+        perf.cargarUser(user);
+        perf.setVisible(true);
+        main.setVisible(false);
+    }//GEN-LAST:event_PerfilMouseClicked
 
     private void PerfilMouseMoved(java.awt.event.MouseEvent evt) {Perfil.setForeground(new java.awt.Color(255, 255, 255));}
     private void PerfilMouseExited(java.awt.event.MouseEvent evt) {Perfil.setForeground(new java.awt.Color(0,0,0));}
