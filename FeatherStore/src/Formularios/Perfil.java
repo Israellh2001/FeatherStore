@@ -71,14 +71,14 @@ public class Perfil extends javax.swing.JInternalFrame {
         Nombre = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         correo_elc = new javax.swing.JTextField();
-        contraseña = new javax.swing.JTextField();
-        Con_contraseña = new javax.swing.JTextField();
         nom_usuario = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         Titulo = new javax.swing.JLabel();
         Pais_ = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        contraseña = new javax.swing.JPasswordField();
+        Con_contraseña = new javax.swing.JPasswordField();
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
@@ -161,8 +161,6 @@ public class Perfil extends javax.swing.JInternalFrame {
         jLabel13.setText("Confirmar contraseña :");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, -1, -1));
         jPanel1.add(correo_elc, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 120, -1));
-        jPanel1.add(contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 120, -1));
-        jPanel1.add(Con_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 120, -1));
         jPanel1.add(nom_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 120, -1));
 
         jLabel14.setText("Titulo :");
@@ -183,6 +181,14 @@ public class Perfil extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 440, 60, 40));
+
+        contraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contraseñaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 120, 20));
+        jPanel1.add(Con_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 120, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -225,16 +231,20 @@ public class Perfil extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contraseñaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Con_contraseña;
+    private javax.swing.JPasswordField Con_contraseña;
     private javax.swing.JLabel Correo_elc;
     private javax.swing.JTextField Nombre;
     private javax.swing.JLabel Nombre_Com;
     private javax.swing.JLabel Nombre_user;
     private javax.swing.JLabel Pais_;
     private javax.swing.JLabel Titulo;
-    private javax.swing.JTextField contraseña;
+    private javax.swing.JPasswordField contraseña;
     private javax.swing.JTextField correo_elc;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
