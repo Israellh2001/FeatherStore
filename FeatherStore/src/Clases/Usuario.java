@@ -2,9 +2,15 @@
 package Clases;
 
 public class Usuario {
-    String Username,Nombre,Pais;
+    String Username,Nombre,Pais,Titulo,Correo;
     boolean Developer;
     
+    public void setTitulo(String x){
+        Titulo = x;
+    }
+    public void setCorreo(String x){
+        Correo=x;
+    }
     public void setUsername(String x){
         Username = x;
     }
@@ -20,6 +26,9 @@ public class Usuario {
         else
             Developer=false;
     }
+    public String getCorreo(){
+        return Correo;
+    }
     public boolean getDeveloper(){
         return Developer;
     }
@@ -31,6 +40,9 @@ public class Usuario {
     }
     public String getPais(){
         return Pais;
+    }
+    public String getTitulo(){
+        return Titulo;
     }
     public void verDatos(){
         System.out.println(Username+"___"+Nombre+"___"+Pais);

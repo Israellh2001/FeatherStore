@@ -52,6 +52,12 @@ public class Mysql {
                 user1.setNombre(y);
                 y = rs.getString("Pais");
                 user1.setPais(y);
+                if(user1.getDeveloper()){
+                    y = rs.getString("Titulo");
+                    user1.setTitulo(y);
+                }
+                y = rs.getString("Correo");
+                user1.setCorreo(y);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error", WARNING_MESSAGE);

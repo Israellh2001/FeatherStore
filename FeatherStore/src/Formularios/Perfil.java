@@ -1,22 +1,43 @@
 
 package Formularios;
 import Clases.Usuario;
+import Clases.Mysql;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.WARNING_MESSAGE;
+
 
 public class Perfil extends javax.swing.JInternalFrame {
+    Mysql conn;
+    public String nombre_,apellidos_,contraseña_,correo_,conn_contraseña_,nom_usuario_,pais,NOMBRE,Contraseña_prron;
 
+    
     public Perfil(){
+        conn = new Mysql();
+        conn.connection("featherstore", "root", "");
         
         initComponents();
+    }
+    public void cargar(){
+        nombre_ = Nombre.getText();
+        contraseña_ = String.valueOf(contraseña.getText());
+        correo_ = correo_elc.getText();
+        conn_contraseña_ = String.valueOf(Con_contraseña.getText());
+        nom_usuario_ = nom_usuario.getText();
+        pais = String.valueOf(paises.getSelectedItem());
+        //System.out.println(nombre_+"__"+apellidos_+"___"+nom_usuario_+"____"+pais+"__"+correo_+"___"+contraseña_+"____"+conn_contraseña_+"_______\n");
+        NOMBRE = nombre_+" "+apellidos_;
     }
     public void cargarUser(Usuario x){
         Titulo.setVisible(false);
         if(x.getDeveloper()){
             Titulo.setVisible(true);
+            Titulo.setText(x.getTitulo());
             jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Ahorasifinalneg.png")));
         }
         Nombre_user.setText(x.getUsername());
         Nombre_Com.setText(x.getNombre());
         Pais_.setText(x.getPais());
+        Correo_elc.setText(x.getCorreo());
         
     }
 
@@ -45,14 +66,14 @@ public class Perfil extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        Pais = new javax.swing.JComboBox<>();
+        paises = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Nombre = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        correo_elc = new javax.swing.JTextField();
+        contraseña = new javax.swing.JTextField();
+        Con_contraseña = new javax.swing.JTextField();
+        nom_usuario = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         Titulo = new javax.swing.JLabel();
         Pais_ = new javax.swing.JLabel();
@@ -112,7 +133,7 @@ public class Perfil extends javax.swing.JInternalFrame {
         jCheckBox2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 380, -1, 30));
 
-        jLabel8.setText("Nombre de usuario :");
+        jLabel8.setText("Nombre :");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, -1, -1));
 
         jLabel9.setText("Correo :");
@@ -124,25 +145,25 @@ public class Perfil extends javax.swing.JInternalFrame {
         jLabel11.setText("Nombre de usuario :");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 230, 110, 20));
 
-        Pais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mexico", "U.S.A", "Chile", "Peru", "Argentina", "Colombia", "España", "Canada", "Cuba", "Costa rica", "Honduras", "Brasil", "Francia", "China" }));
-        jPanel1.add(Pais, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, 90, 30));
+        paises.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mexico", "U.S.A", "Chile", "Peru", "Argentina", "Colombia", "España", "Canada", "Cuba", "Costa rica", "Honduras", "Brasil", "Francia", "China" }));
+        jPanel1.add(paises, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, 90, 30));
 
         jLabel12.setText("Pais :");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, -1, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        Nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                NombreActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 120, -1));
+        jPanel1.add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 120, -1));
 
         jLabel13.setText("Confirmar contraseña :");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, -1, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 120, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 120, -1));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 120, -1));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 120, -1));
+        jPanel1.add(correo_elc, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 120, -1));
+        jPanel1.add(contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 120, -1));
+        jPanel1.add(Con_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 120, -1));
+        jPanel1.add(nom_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 120, -1));
 
         jLabel14.setText("Titulo :");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
@@ -189,22 +210,32 @@ public class Perfil extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_NombreActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        cargar();
+        if(contraseña_.equals(conn_contraseña_)){
+            conn.Registro(nombre_, correo_, contraseña_, pais, nom_usuario_);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Comprueba la contraseña", WARNING_MESSAGE);
+
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Con_contraseña;
     private javax.swing.JLabel Correo_elc;
+    private javax.swing.JTextField Nombre;
     private javax.swing.JLabel Nombre_Com;
     private javax.swing.JLabel Nombre_user;
-    private javax.swing.JComboBox<String> Pais;
     private javax.swing.JLabel Pais_;
     private javax.swing.JLabel Titulo;
+    private javax.swing.JTextField contraseña;
+    private javax.swing.JTextField correo_elc;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
@@ -227,10 +258,7 @@ public class Perfil extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField nom_usuario;
+    private javax.swing.JComboBox<String> paises;
     // End of variables declaration//GEN-END:variables
 }

@@ -18,6 +18,7 @@ public class Menu extends javax.swing.JFrame {
     Busqueda ask;
     Perfil perf;
     Principal_ main;
+    javax.swing.JInternalFrame anterior,actual;
     
     public Menu(){
         initComponents();
@@ -31,10 +32,17 @@ public class Menu extends javax.swing.JFrame {
         perf.setVisible(false);
         ask.setVisible(false);
         main=new Principal_();
-        main.setVisible(true);
+        actual = main;
+        actual.setVisible(true);
         jPanel3.add(perf);
         jPanel3.add(main);
         jPanel3.add(ask);
+    }
+    public void intercambio(javax.swing.JInternalFrame x){
+        actual.setVisible(false);
+        anterior = actual;
+        actual = x;
+        actual.setVisible(true);
     }
     public void cargarUser(Usuario x){
         user = x;
@@ -42,8 +50,13 @@ public class Menu extends javax.swing.JFrame {
         Nombre2.setText(h);
         Username2.setText(y);
     }
-
-
+    public void regresar(){
+        actual.setVisible(false);
+        javax.swing.JInternalFrame aux=actual;
+        actual = anterior;
+        anterior = aux;
+        actual.setVisible(true);
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -72,7 +85,6 @@ public class Menu extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
 
@@ -211,7 +223,13 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(69, 85, 140));
 
-        jLabel20.setText("<");
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel20.setText("<-");
+        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel20MouseClicked(evt);
+            }
+        });
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Busqueda.png"))); // NOI18N
 
@@ -232,18 +250,14 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo_Pequeño.png"))); // NOI18N
 
-        jLabel24.setText(">");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel24)
-                .addGap(57, 57, 57)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
                 .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,22 +273,20 @@ public class Menu extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel24))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 870, 40));
@@ -299,8 +311,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
         if(evt.getKeyCode()==10){
-            ask.setVisible(true);
-            main.setVisible(false);
+            intercambio(ask);
         }
     }//GEN-LAST:event_jTextField1KeyReleased
 
@@ -312,10 +323,12 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_CerrarSesionMouseClicked
 
     private void PerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PerfilMouseClicked
-        perf.cargarUser(user);
-        perf.setVisible(true);
-        main.setVisible(false);
+        intercambio(perf);
     }//GEN-LAST:event_PerfilMouseClicked
+
+    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
+        regresar();
+    }//GEN-LAST:event_jLabel20MouseClicked
 
     private void PerfilMouseMoved(java.awt.event.MouseEvent evt) {Perfil.setForeground(new java.awt.Color(255, 255, 255));}
     private void PerfilMouseExited(java.awt.event.MouseEvent evt) {Perfil.setForeground(new java.awt.Color(0,0,0));}
@@ -346,7 +359,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
