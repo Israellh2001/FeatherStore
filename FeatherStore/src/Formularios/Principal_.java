@@ -213,20 +213,14 @@ public class Principal_ extends javax.swing.JInternalFrame {
       private void JuegosMouseMoved(java.awt.event.MouseEvent evt) {Juegos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
       private void JuegosMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {}
       private void JuegosMouseExited(java.awt.event.MouseEvent evt) {Juegos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-      private void NoticiasMouseMoved(java.awt.event.MouseEvent evt) {Noticias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-      private void NoticiasMouseExited(java.awt.event.MouseEvent evt) {Noticias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
       private void ActualizacionesMouseMoved(java.awt.event.MouseEvent evt) {Actualizaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
       private void ActualizacionesMouseExited(java.awt.event.MouseEvent evt) {Actualizaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-      private void Para_el_hogarMouseMoved(java.awt.event.MouseEvent evt) {Para_el_hogar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-      private void Para_el_hogarMouseExited(java.awt.event.MouseEvent evt) {Para_el_hogar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
       private void Desarrollo_SoftMouseMoved(java.awt.event.MouseEvent evt) {Desarrollo_Soft.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
       private void Desarrollo_SoftMouseExited(java.awt.event.MouseEvent evt) {Desarrollo_Soft.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
       private void Diseño_GraficoMouseMoved(java.awt.event.MouseEvent evt) {Diseño_Grafico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
       private void Diseño_GraficoMouseExited(java.awt.event.MouseEvent evt) {Diseño_Grafico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
       private void Audio_VideoMouseMoved(java.awt.event.MouseEvent evt) {Audio_Video.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
       private void Audio_VideoMouseExited(java.awt.event.MouseEvent evt) {Audio_Video.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-      private void FacilidadesMouseMoved(java.awt.event.MouseEvent evt) {Facilidades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-      private void FacilidadesMouseExited(java.awt.event.MouseEvent evt) {Facilidades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
       private void InfoMouseMoved(java.awt.event.MouseEvent evt) {Info.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
       private void InfoMouseExited(java.awt.event.MouseEvent evt) {Info.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
       private void FetherStudioMouseMoved(java.awt.event.MouseEvent evt) {FetherStudio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
