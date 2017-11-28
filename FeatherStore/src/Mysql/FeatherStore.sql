@@ -18,11 +18,11 @@ USE `FeahterStore` ;
 -- Table `FeahterStore`.`Usuarios`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `FeahterStore`.`Usuarios` (
-  `idUsuarios` INT NOT NULL,
-  `Username` VARCHAR(45) NOT NULL,
-  `Password` VARCHAR(45) NOT NULL,
-  `Correo` VARCHAR(45) NOT NULL,
-  `Nombre` VARCHAR(45) NOT NULL,
+  `idUsuarios` INT AUTO_INCREMENT NULL,
+  `Username` VARCHAR(45) NULL,
+  `Password` VARCHAR(45) NULL,
+  `Correo` VARCHAR(45) NULL,
+  `Nombre` VARCHAR(45) NULL,
   `Pais` VARCHAR(45) NULL,
   PRIMARY KEY (`idUsuarios`))
 ENGINE = InnoDB;
@@ -32,14 +32,14 @@ ENGINE = InnoDB;
 -- Table `FeahterStore`.`Desarrolladores`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `FeahterStore`.`Desarrolladores` (
-  `idDesarrolladores` INT NOT NULL,
-  `Correo` VARCHAR(45) NOT NULL,
-  `Username` VARCHAR(45) NOT NULL,
-  `Nombre` VARCHAR(45) NOT NULL,
-  `Direccion` VARCHAR(120) NOT NULL,
-  `Pais` VARCHAR(45) NOT NULL,
-  `Password` VARCHAR(45) NOT NULL,
-  `Titulo` VARCHAR(45) NOT NULL,
+  `idDesarrolladores` INT AUTO_INCREMENT NULL,
+  `Correo` VARCHAR(45) NULL,
+  `Username` VARCHAR(45) NULL,
+  `Nombre` VARCHAR(45) NULL,
+  `Direccion` VARCHAR(120) NULL,
+  `Pais` VARCHAR(45) NULL,
+  `Password` VARCHAR(45) NULL,
+  `Titulo` VARCHAR(45) NULL,
   PRIMARY KEY (`idDesarrolladores`))
 ENGINE = InnoDB;
 
@@ -48,11 +48,13 @@ ENGINE = InnoDB;
 -- Table `FeahterStore`.`Software`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `FeahterStore`.`Software` (
-  `idSoftware` INT NOT NULL,
+  `idSoftware` INT AUTO_INCREMENT NULL,
   `Nombre` VARCHAR(45) NULL,
   `Precio` VARCHAR(45) NULL,
   `Descripcion` VARCHAR(300) NULL,
   `Desarrollador_es` VARCHAR(120) NULL,
+  `Repo_Git` VARCHAR(100) NULL,
+  `Categoria` VARCHAR(45) NULL,
   `Desarrolladores_idDesarrolladores` INT NOT NULL,
   PRIMARY KEY (`idSoftware`),
   INDEX `fk_Software_Desarrolladores_idx` (`Desarrolladores_idDesarrolladores` ASC),
