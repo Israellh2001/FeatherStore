@@ -20,7 +20,7 @@ USE `FeahterStore` ;
 CREATE TABLE IF NOT EXISTS `FeahterStore`.`Usuarios` (
   `idUsuarios` INT AUTO_INCREMENT NULL,
   `Username` VARCHAR(45) NULL,
-  `Password` VARCHAR(45) NULL,
+  `Password_` VARCHAR(45) NULL,
   `Correo` VARCHAR(45) NULL,
   `Nombre` VARCHAR(45) NULL,
   `Pais` VARCHAR(45) NULL,
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `FeahterStore`.`Desarrolladores` (
   `Nombre` VARCHAR(45) NULL,
   `Direccion` VARCHAR(120) NULL,
   `Pais` VARCHAR(45) NULL,
-  `Password` VARCHAR(45) NULL,
+  `Password_` VARCHAR(45) NULL,
   `Titulo` VARCHAR(45) NULL,
   PRIMARY KEY (`idDesarrolladores`))
 ENGINE = InnoDB;
