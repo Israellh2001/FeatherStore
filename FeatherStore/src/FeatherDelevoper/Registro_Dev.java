@@ -15,7 +15,7 @@ public class Registro_Dev extends javax.swing.JFrame {
 
     public Registro_Dev() {
         conn = new Mysql();
-        conn.connection("featherstore", "root", "");
+        conn.connection("feahterstore", "root", "");
         setResizable(false);
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Feather Logo.png")).getImage());
@@ -360,7 +360,7 @@ public class Registro_Dev extends javax.swing.JFrame {
             Login x = new Login();
             x.setLocation(this.getLocation());
             x.setVisible(true);
-            this.dispose();
+            this.dispose();     
        }
        else{
             JOptionPane.showMessageDialog(null, "Ingresa correctamente los datos", "Ocurrio un error al registarse", WARNING_MESSAGE);

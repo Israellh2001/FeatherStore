@@ -38,7 +38,7 @@ public class Principal_ extends javax.swing.JInternalFrame {
         Juegos.setBackground(new java.awt.Color(255, 255, 255));
         Juegos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Juegos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Gmae.png"))); // NOI18N
-        Juegos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Juegos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Juegos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 JuegosMouseDragged(evt);
@@ -62,7 +62,7 @@ public class Principal_ extends javax.swing.JInternalFrame {
         Actualizaciones.setBackground(new java.awt.Color(255, 255, 255));
         Actualizaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Actualizaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Actualizaciones_Final.png"))); // NOI18N
-        Actualizaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Actualizaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Actualizaciones.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 ActualizacionesMouseMoved(evt);
@@ -78,7 +78,7 @@ public class Principal_ extends javax.swing.JInternalFrame {
         Desarrollo_Soft.setBackground(new java.awt.Color(255, 255, 255));
         Desarrollo_Soft.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Desarrollo_Soft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Progra.png"))); // NOI18N
-        Desarrollo_Soft.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Desarrollo_Soft.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Desarrollo_Soft.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Desarrollo_SoftMouseMoved(evt);
@@ -94,7 +94,7 @@ public class Principal_ extends javax.swing.JInternalFrame {
         Diseño_Grafico.setBackground(new java.awt.Color(255, 255, 255));
         Diseño_Grafico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Diseño_Grafico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Idea_Final.png"))); // NOI18N
-        Diseño_Grafico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Diseño_Grafico.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Diseño_Grafico.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Diseño_GraficoMouseMoved(evt);
@@ -110,7 +110,7 @@ public class Principal_ extends javax.swing.JInternalFrame {
         Audio_Video.setBackground(new java.awt.Color(255, 255, 255));
         Audio_Video.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Audio_Video.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Video1.png"))); // NOI18N
-        Audio_Video.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Audio_Video.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Audio_Video.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Audio_VideoMouseMoved(evt);
@@ -126,7 +126,7 @@ public class Principal_ extends javax.swing.JInternalFrame {
         Info.setBackground(new java.awt.Color(255, 255, 255));
         Info.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Info.setText("Sobre la aplicación");
-        Info.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Info.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Info.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 InfoMouseMoved(evt);
@@ -142,7 +142,7 @@ public class Principal_ extends javax.swing.JInternalFrame {
         FetherStudio.setBackground(new java.awt.Color(255, 255, 255));
         FetherStudio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FetherStudio.setText("Sobre FetherStudio");
-        FetherStudio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        FetherStudio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         FetherStudio.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 FetherStudioMouseMoved(evt);
@@ -158,7 +158,7 @@ public class Principal_ extends javax.swing.JInternalFrame {
         Hardware.setBackground(new java.awt.Color(255, 255, 255));
         Hardware.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Hardware.setText("Sobre Hardware");
-        Hardware.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Hardware.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Hardware.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 HardwareMouseMoved(evt);
@@ -174,7 +174,7 @@ public class Principal_ extends javax.swing.JInternalFrame {
         Ayuda.setBackground(new java.awt.Color(255, 255, 255));
         Ayuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Ayuda.setText("Ayuda");
-        Ayuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Ayuda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Ayuda.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 AyudaMouseMoved(evt);
@@ -188,6 +188,11 @@ public class Principal_ extends javax.swing.JInternalFrame {
         jPanel1.add(Ayuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(635, 363, 195, 124));
 
         jLabel1.setText("Juegos");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
 
         jLabel4.setText("Actualizaciones");
@@ -209,6 +214,10 @@ public class Principal_ extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        System.out.println("cliqueo perron");
+    }//GEN-LAST:event_jLabel1MouseClicked
 
       private void JuegosMouseMoved(java.awt.event.MouseEvent evt) {Juegos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
       private void JuegosMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {}

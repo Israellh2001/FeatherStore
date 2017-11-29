@@ -17,7 +17,7 @@ public class Registro extends javax.swing.JFrame{
     public Registro() {
         setResizable(false);
         conn = new Mysql();
-        conn.connection("featherstore", "root", "");
+        conn.connection("feahterstore", "root", "");
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Feather Logo.png")).getImage());
         setTitle("Registro-FeatherStore");
@@ -141,7 +141,7 @@ public class Registro extends javax.swing.JFrame{
         });
 
         jLabel17.setText("¿Ya tienes cuenta?");
-        jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel17MouseClicked(evt);
