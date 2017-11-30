@@ -8,6 +8,7 @@ import Clases.Usuario;
 import Formularios.Login;
 import Formularios.Perfil;
 import Formularios.Principal_;
+import FeatherDelevoper.AppUp;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -18,6 +19,7 @@ public class Menu extends javax.swing.JFrame {
     Busqueda ask;
     Perfil perf;
     Principal_ main;
+    AppUp appup;
     javax.swing.JInternalFrame anterior,actual;
     
     public Menu(){
@@ -28,6 +30,7 @@ public class Menu extends javax.swing.JFrame {
         conn=new Mysql();
         conn.connection("FeatherStore","root", "");
         ask=new Busqueda();
+        appup = new AppUp();
         perf = new Perfil();
         perf.setVisible(false);
         ask.setVisible(false);
@@ -37,6 +40,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel3.add(perf);
         jPanel3.add(main);
         jPanel3.add(ask);
+        
     }
     public void intercambio(javax.swing.JInternalFrame x){
         actual.setVisible(false);
@@ -173,6 +177,9 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         FetherDeveloper.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FetherDeveloperMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 FetherDeveloperMouseExited(evt);
             }
@@ -329,6 +336,10 @@ public class Menu extends javax.swing.JFrame {
     private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
         regresar();
     }//GEN-LAST:event_jLabel20MouseClicked
+
+    private void FetherDeveloperMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FetherDeveloperMouseClicked
+        
+    }//GEN-LAST:event_FetherDeveloperMouseClicked
 
     private void PerfilMouseMoved(java.awt.event.MouseEvent evt) {Perfil.setForeground(new java.awt.Color(255, 255, 255));}
     private void PerfilMouseExited(java.awt.event.MouseEvent evt) {Perfil.setForeground(new java.awt.Color(0,0,0));}

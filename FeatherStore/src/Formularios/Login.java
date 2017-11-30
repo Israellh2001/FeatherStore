@@ -19,7 +19,7 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         conn = new Mysql();
-        conn.connection("FeahterStore","root","");
+        conn.connection("feahterstore","root","");
         setUndecorated(true);
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Feather Logo.png")).getImage());

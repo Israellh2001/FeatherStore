@@ -6,6 +6,7 @@ import Clases.Usuario;
 
 
 public class AppUp extends javax.swing.JInternalFrame {
+    String nom,dess,Repo,precio_,categoria,dessa_;
     Mysql conn;
     
     public AppUp() {
@@ -17,6 +18,14 @@ public class AppUp extends javax.swing.JInternalFrame {
         Nombre.setText(x.getNombre());
         nom_user.setText(x.getUsername());
         Titulo.setText(x.getTitulo());
+    }
+    public void cargar(){
+        nom=Nom_app.getText();
+        dess=Descripcio.getText();
+        Repo = Repo_git.getText();
+        precio_=Precio.getText();
+        dessa_=Dessa.getText();
+        categoria = String.valueOf(Categ.getSelectedItem());
     }
     
     @SuppressWarnings("unchecked")
@@ -47,15 +56,15 @@ public class AppUp extends javax.swing.JInternalFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        Nom_app = new javax.swing.JTextField();
+        Precio = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        Descripcio = new javax.swing.JTextArea();
+        Dessa = new javax.swing.JTextField();
+        Repo_git = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Categ = new javax.swing.JComboBox<>();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -142,25 +151,25 @@ public class AppUp extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 530, 70, 30));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 200, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 300, 80, -1));
+        jPanel1.add(Nom_app, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 200, -1));
+        jPanel1.add(Precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 300, 80, -1));
 
         jLabel16.setText("$");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 300, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        Descripcio.setColumns(20);
+        Descripcio.setRows(5);
+        jScrollPane1.setViewportView(Descripcio);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 210, 60));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 420, 210, -1));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, 210, -1));
+        jPanel1.add(Dessa, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 420, 210, -1));
+        jPanel1.add(Repo_git, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, 210, -1));
 
         jLabel17.setText("Categoria :");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 500, -1, -1));
+        Categ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Juegos", "Diseño grafico", "Desarrollo de software", "Audio video", "Otra" }));
+        jPanel1.add(Categ, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 500, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,7 +186,7 @@ public class AppUp extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        //boton de subir
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -186,11 +195,16 @@ public class AppUp extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> Categ;
+    private javax.swing.JTextArea Descripcio;
+    private javax.swing.JTextField Dessa;
+    private javax.swing.JTextField Nom_app;
     private javax.swing.JLabel Nombre;
+    private javax.swing.JTextField Precio;
+    private javax.swing.JTextField Repo_git;
     private javax.swing.JLabel Titulo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -213,11 +227,6 @@ public class AppUp extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel nom_user;
     // End of variables declaration//GEN-END:variables
 }
