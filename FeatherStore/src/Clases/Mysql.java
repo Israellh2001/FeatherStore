@@ -9,10 +9,8 @@ import static javax.swing.JOptionPane.WARNING_MESSAGE;
 import javax.swing.JTextArea;
 
 public class Mysql {
-    protected Connection Conexion;
-    public Mysql(){
-        
-    }
+    private static Connection Conexion;
+    public Mysql(){}
     public void connection(String db_name,String user,String pass){
         try {
             Class.forName("com.mysql.jdbc.Driver");

@@ -17,7 +17,7 @@ public class Registro extends javax.swing.JFrame{
     public Registro() {
         setResizable(false);
         conn = new Mysql();
-        conn.connection("feahterstore", "root", "");
+        conn.connection("featherstore", "root", "");
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Feather Logo.png")).getImage());
         setTitle("Registro-FeatherStore");

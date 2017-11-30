@@ -15,7 +15,7 @@ public class Registro_Dev extends javax.swing.JFrame {
 
     public Registro_Dev() {
         conn = new Mysql();
-        conn.connection("feahterstore", "root", "");
+        conn.connection("featherstore", "root", "");
         setResizable(false);
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Feather Logo.png")).getImage());
