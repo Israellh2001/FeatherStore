@@ -2,9 +2,12 @@
 package Clases;
 
 public class Usuario {
-    String Username,Nombre,Pais,Titulo,Correo;
+    String Username,Nombre,Pais,Titulo,Correo,id;
     boolean Developer;
     
+    public void setId(String x){
+        id = x;
+    }
     public void setTitulo(String x){
         Titulo = x;
     }
@@ -25,6 +28,9 @@ public class Usuario {
             Developer=true;
         else
             Developer=false;
+    }
+    public String getId(){
+        return id;
     }
     public String getCorreo(){
         return Correo;

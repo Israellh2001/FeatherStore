@@ -7,8 +7,9 @@ import static javax.swing.JOptionPane.WARNING_MESSAGE;
 
 
 public class Perfil extends javax.swing.JInternalFrame {
+    boolean nom = false,contra=false,i=true,trem=false;
     Mysql conn;
-    public String nombre_,apellidos_,contraseña_,correo_,conn_contraseña_,nom_usuario_,pais,NOMBRE,Contraseña_prron;
+    public String nombre_,apellidos_,contraseña_,correo_,conn_contraseña_,nom_usuario_,pais,NOMBRE,Contraseña_prron,id;
 
     
     public Perfil(){
@@ -28,8 +29,10 @@ public class Perfil extends javax.swing.JInternalFrame {
         NOMBRE = nombre_+" "+apellidos_;
     }
     public void cargarUser(Usuario x){
+        jLabel14.setVisible(false);
         Titulo.setVisible(false);
         if(x.getDeveloper()){
+            jLabel14.setVisible(true);
             Titulo.setVisible(true);
             Titulo.setText(x.getTitulo());
             jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Ahorasifinalneg.png")));
@@ -38,6 +41,7 @@ public class Perfil extends javax.swing.JInternalFrame {
         Nombre_Com.setText(x.getNombre());
         Pais_.setText(x.getPais());
         Correo_elc.setText(x.getCorreo());
+        id=x.getId();
         
     }
 
@@ -79,6 +83,9 @@ public class Perfil extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         contraseña = new javax.swing.JPasswordField();
         Con_contraseña = new javax.swing.JPasswordField();
+        Terminos = new javax.swing.JLabel();
+        validar_con = new javax.swing.JLabel();
+        validar_nom = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
@@ -119,7 +126,7 @@ public class Perfil extends javax.swing.JInternalFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, 30, 30));
+        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, 30, 30));
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 10, 550));
@@ -131,7 +138,12 @@ public class Perfil extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 390, -1, -1));
 
         jCheckBox2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 380, -1, 30));
+        jCheckBox2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jCheckBox2MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, -1, 30));
 
         jLabel8.setText("Nombre :");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, -1, -1));
@@ -161,6 +173,12 @@ public class Perfil extends javax.swing.JInternalFrame {
         jLabel13.setText("Confirmar contraseña :");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, -1, -1));
         jPanel1.add(correo_elc, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 120, -1));
+
+        nom_usuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nom_usuarioKeyReleased(evt);
+            }
+        });
         jPanel1.add(nom_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 120, -1));
 
         jLabel14.setText("Titulo :");
@@ -187,8 +205,28 @@ public class Perfil extends javax.swing.JInternalFrame {
                 contraseñaActionPerformed(evt);
             }
         });
+        contraseña.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                contraseñaKeyReleased(evt);
+            }
+        });
         jPanel1.add(contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 120, 20));
+
+        Con_contraseña.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Con_contraseñaKeyReleased(evt);
+            }
+        });
         jPanel1.add(Con_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 120, 20));
+
+        Terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Finalequis.png"))); // NOI18N
+        jPanel1.add(Terminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 380, -1, -1));
+
+        validar_con.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Finalequis.png"))); // NOI18N
+        jPanel1.add(validar_con, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 160, -1, -1));
+
+        validar_nom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Finalequis.png"))); // NOI18N
+        jPanel1.add(validar_nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 230, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -222,8 +260,9 @@ public class Perfil extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         cargar();
-        if(contraseña_.equals(conn_contraseña_)){
-            conn.Registro(nombre_, correo_, contraseña_, pais, nom_usuario_);
+        if(contra && nom && trem){
+            conn.editarPerfil(nombre_, correo_, contraseña_, pais, nom_usuario_,id);
+            JOptionPane.showMessageDialog(null, "AL 100 COMPA ya actualizaste", "Informacion actualizada", WARNING_MESSAGE);
         }
         else{
             JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Comprueba la contraseña", WARNING_MESSAGE);
@@ -235,6 +274,53 @@ public class Perfil extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_contraseñaActionPerformed
 
+    private void nom_usuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nom_usuarioKeyReleased
+        char c = evt.getKeyChar();
+        if(Character.isJavaIdentifierPart(c)){
+           validar_nom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FinalFinalCheck.png")));
+           nom=true;
+        }
+        else{
+            validar_nom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Finalequis.png")));
+            nom=false;
+        }
+    }//GEN-LAST:event_nom_usuarioKeyReleased
+
+    private void contraseñaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_contraseñaKeyReleased
+        String k=String.valueOf(contraseña.getText()),ñ=String.valueOf(Con_contraseña.getText());
+        if(k.equals(ñ)){
+           validar_con.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FinalFinalCheck.png")));
+           contra=true;
+       }else{
+           validar_con.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Finalequis.png")));
+           contra=false;
+        }
+    }//GEN-LAST:event_contraseñaKeyReleased
+
+    private void Con_contraseñaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Con_contraseñaKeyReleased
+       String k=String.valueOf(contraseña.getText()),ñ=String.valueOf(Con_contraseña.getText());
+        if(k.equals(ñ)){
+           validar_con.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FinalFinalCheck.png")));
+           contra=true;
+       }else{
+           validar_con.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Finalequis.png")));
+           contra=false;
+        }
+    }//GEN-LAST:event_Con_contraseñaKeyReleased
+
+    private void jCheckBox2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCheckBox2MouseClicked
+        if(i){
+            Terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FinalFinalCheck.png")));
+            i=false;
+            trem=true;
+        }
+        else{
+            Terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Finalequis.png")));
+            i=true;
+            trem=false;
+        }
+    }//GEN-LAST:event_jCheckBox2MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField Con_contraseña;
@@ -243,6 +329,7 @@ public class Perfil extends javax.swing.JInternalFrame {
     private javax.swing.JLabel Nombre_Com;
     private javax.swing.JLabel Nombre_user;
     private javax.swing.JLabel Pais_;
+    private javax.swing.JLabel Terminos;
     private javax.swing.JLabel Titulo;
     private javax.swing.JPasswordField contraseña;
     private javax.swing.JTextField correo_elc;
@@ -270,5 +357,7 @@ public class Perfil extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField nom_usuario;
     private javax.swing.JComboBox<String> paises;
+    private javax.swing.JLabel validar_con;
+    private javax.swing.JLabel validar_nom;
     // End of variables declaration//GEN-END:variables
 }

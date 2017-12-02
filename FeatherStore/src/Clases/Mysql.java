@@ -11,6 +11,17 @@ import javax.swing.JTextArea;
 public class Mysql {
     private static Connection Conexion;
     public Mysql(){}
+    public void editarPerfil (String nombre, String Correo, String Contra, String pais, String Nikname, String id){
+         String sql = "Update usuarios set Correo="+"'"+Correo+"'"+", Username="+"'"+Nikname+"'"+", Nombre="+"'"+nombre+"'"+", Pais="+"'"+pais+"'"+", Password_="+"'"+Contra+"'"+" where idUsuarios="+id+"";
+         System.out.println(sql);
+         try {
+            Statement st = Conexion.createStatement();
+            st.executeUpdate(sql);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error al Actualizar", WARNING_MESSAGE);
+        
+        }   
+    }
     public void connection(String db_name,String user,String pass){
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -34,6 +45,17 @@ public class Mysql {
             JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error :c", WARNING_MESSAGE);
         }
     }
+    public void insertApp(String nom, String precio, String Descripcion, String Dessa, String repo, String categ){
+        String sql = "Insert Into software(Nombre,Precio,Descripcion,Desarrolladores,Repo_Git,Categoria) values("+"'"+nom+"'"+","+"'"+precio+"'"+","+"'"+Descripcion+"'"+","+"'"+Dessa+"'"+","+"'"+repo+"'"+","+"'"+categ+"'"+")";
+         System.out.println(sql);
+         try {
+            Statement st = Conexion.createStatement();
+            st.executeUpdate(sql);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error al Ingresar la app", WARNING_MESSAGE);
+        
+        }   
+    }
     public void cargarUser(String user,String password,Usuario user1){
         String sql = null,y=null;
         if(user1.getDeveloper()){
@@ -53,9 +75,16 @@ public class Mysql {
                 user1.setNombre(y);
                 y = rs.getString("Pais");
                 user1.setPais(y);
+                
                 if(user1.getDeveloper()){
                     y = rs.getString("Titulo");
                     user1.setTitulo(y);
+                    y = rs.getString("idDesarrolladores");
+                    user1.setId(y);
+                }
+                else{
+                    y = rs.getString("idUsuarios");
+                    user1.setId(y);
                 }
                 y = rs.getString("Correo");
                 user1.setCorreo(y);
@@ -96,7 +125,6 @@ public class Mysql {
         }
             return Login;
         }
-    
     public void Registro (String nombre, String Correo, String Contra, String pais, String Nikname){
          String sql = "Insert Into usuarios(Correo,Username,Nombre,Pais,Password_) values ("+"'"+Correo+"'"+","+"'"+Nikname+"'"+","+"'"+nombre+"'"+","+"'"+pais+"'"+","+"'"+Contra+"'"+")";
          
@@ -137,8 +165,7 @@ public class Mysql {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error al registarse", WARNING_MESSAGE);
             }
-        }
-    
+        } 
     public void mostrar_resultados(String categoria,JLabel l1,JTextArea d1){
         //Mostrando el titulo de los proyectos de la seccion seleccionada
         String titulo="Select * from Software where Categoria='"+categoria+"';";
