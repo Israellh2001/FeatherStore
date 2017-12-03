@@ -100,7 +100,7 @@ public class AppUp extends javax.swing.JInternalFrame {
         jLabel5.setText("Con lo que podras subir actualizaciónes cada que quieras");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 330, -1));
 
-        jLabel6.setText("Quieres modificar, editar o eliminar alguna aplicación tuya?");
+        jLabel6.setText("Quieres modificar o eliminar alguna aplicación tuya?");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, 20));
 
         jLabel7.setText("En Feather pensamos en todo y te preparamos un menu personalizado");
@@ -146,7 +146,7 @@ public class AppUp extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(69, 85, 140));
-        jButton2.setText("Ver/Editar");
+        jButton2.setText("Ver/Eliminar");
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

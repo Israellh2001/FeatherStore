@@ -21,7 +21,7 @@ public class Ayuda_Contacto extends javax.swing.JInternalFrame {
         c.setUsuarioCorreo("mcool9601@gmail.com");
         c.setAsunto(asunto_);
         c.setMensaje(Contenido.getText().trim());
-        c.setDestino("israellh2001@gmail.com");
+        c.setDestino("feather.tm.ags@gmail.com");
         if(x.enviarCorreo(c)){
             JOptionPane.showMessageDialog(null, "Al 100", "Mensaje Enviado", WARNING_MESSAGE);
         }
