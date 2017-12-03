@@ -16,7 +16,7 @@ public class Ayuda_Contacto extends javax.swing.JInternalFrame {
         x = new Control();
     }
     public void enviarCorreo_(){
-        asunto_="De :"+Nombre.getText()+"__"+Asunto.getText();
+        asunto_="De :"+Nombre.getText()+"___FeatherStore___"+Asunto.getText();
         c.setContraseña("tunutlhjueudeidi");
         c.setUsuarioCorreo("mcool9601@gmail.com");
         c.setAsunto(asunto_);

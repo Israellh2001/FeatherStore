@@ -2,16 +2,14 @@
 package FeatherStore;
 
 import Clases.Mysql;
-import java.awt.CardLayout;
 import Formularios.Busqueda;
 import Clases.Usuario;
-import Formularios.Login;
+import Formularios.*;
 import Formularios.Perfil;
 import Formularios.Principal_;
 import FeatherDelevoper.AppUp;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
-import javax.swing.JPanel;
 import Formularios.Ayuda_Contacto;
 
 public class Menu extends javax.swing.JFrame {
@@ -22,6 +20,11 @@ public class Menu extends javax.swing.JFrame {
     Perfil perf;
     Principal_ main;
     AppUp appup;
+    public Sobre_App appinfo;
+    public Sobre_Feather info;
+    
+    
+    
     javax.swing.JInternalFrame anterior,actual;
     
     public Menu(){
@@ -35,13 +38,19 @@ public class Menu extends javax.swing.JFrame {
         help = new Ayuda_Contacto();
         appup = new AppUp();
         perf = new Perfil();
+        info = new Sobre_Feather();
+        appinfo = new Sobre_App();
         appup.setVisible(false);
         perf.setVisible(false);
         ask.setVisible(false);
+        info.setVisible(false);
+        appinfo.setVisible(false);
         main=new Principal_(this);
         help.setVisible(false);
         actual = main;
         actual.setVisible(true);
+        jPanel3.add(info);
+        jPanel3.add(appinfo);
         jPanel3.add(help);
         jPanel3.add(appup);
         jPanel3.add(perf);

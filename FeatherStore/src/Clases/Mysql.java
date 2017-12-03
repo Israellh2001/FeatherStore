@@ -47,7 +47,7 @@ public class Mysql {
     }
     public void insertApp(String nom, String precio, String Descripcion, String Dessa, String repo, String categ){
         String sql = "Insert Into software(Nombre,Precio,Descripcion,Desarrolladores,Repo_Git,Categoria) values("+"'"+nom+"'"+","+"'"+precio+"'"+","+"'"+Descripcion+"'"+","+"'"+Dessa+"'"+","+"'"+repo+"'"+","+"'"+categ+"'"+")";
-         System.out.println(sql);
+        // System.out.println(sql);
          try {
             Statement st = Conexion.createStatement();
             st.executeUpdate(sql);

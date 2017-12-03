@@ -407,15 +407,17 @@ public class Registro_Dev extends javax.swing.JFrame {
     }//GEN-LAST:event_Con_contraseñaKeyReleased
 
     private void jCheckBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCheckBox1MouseClicked
-       if(i){
-            Terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FinalFinalCheck.png")));
-            i=false;
-            trem=true;
-        }
-        else{
-            Terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Finalequis.png")));
-            i=true;
-            trem=false;
+        if(evt.getButton()==1){
+            if(i){
+                Terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FinalFinalCheck.png")));
+                i=false;
+                trem=true;
+            }
+            else{
+                Terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Finalequis.png")));
+                i=true;
+                trem=false;
+            }
         }
     }//GEN-LAST:event_jCheckBox1MouseClicked
 

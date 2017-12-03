@@ -5,7 +5,6 @@ import FeatherStore.Menu;
 
 public class Principal_ extends javax.swing.JInternalFrame{
     Menu x;
-    
     public Principal_(Menu y) {
         x=y;
         initComponents();
@@ -138,11 +137,14 @@ public class Principal_ extends javax.swing.JInternalFrame{
             }
         });
         Info.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                InfoMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 InfoMouseExited(evt);
             }
         });
-        jPanel1.add(Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 360, 260, 124));
+        jPanel1.add(Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 260, 124));
 
         FetherStudio.setBackground(new java.awt.Color(255, 255, 255));
         FetherStudio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -154,6 +156,9 @@ public class Principal_ extends javax.swing.JInternalFrame{
             }
         });
         FetherStudio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FetherStudioMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 FetherStudioMouseExited(evt);
             }
@@ -189,8 +194,8 @@ public class Principal_ extends javax.swing.JInternalFrame{
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Desarrollo de Software");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 212, -1));
+        jLabel6.setText("  Desarrollo de Software");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 212, -1));
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Diseño Grafico");
@@ -200,7 +205,7 @@ public class Principal_ extends javax.swing.JInternalFrame{
         jLabel8.setText("Audio y Video");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 340, 80, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -212,6 +217,14 @@ public class Principal_ extends javax.swing.JInternalFrame{
     private void JuegosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JuegosMouseClicked
        x.intercambio(x.ask);
     }//GEN-LAST:event_JuegosMouseClicked
+
+    private void InfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InfoMouseClicked
+       x.intercambio(x.appinfo);
+    }//GEN-LAST:event_InfoMouseClicked
+
+    private void FetherStudioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FetherStudioMouseClicked
+        x.intercambio(x.info);
+    }//GEN-LAST:event_FetherStudioMouseClicked
 
       private void JuegosMouseMoved(java.awt.event.MouseEvent evt) {Juegos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
       private void JuegosMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {}

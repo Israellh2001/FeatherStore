@@ -3,6 +3,8 @@ package FeatherDelevoper;
 
 import Clases.Mysql;
 import Clases.Usuario;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.WARNING_MESSAGE;
 
 
 public class AppUp extends javax.swing.JInternalFrame {
@@ -21,12 +23,21 @@ public class AppUp extends javax.swing.JInternalFrame {
         Titulo.setText(x.getTitulo());
     }
     public void cargar(){
-        nom=Nom_app.getText();
-        dess=Descripcio.getText();
-        Repo = Repo_git.getText();
-        precio_=Precio.getText();
-        dessa_=Dessa.getText();
-        categoria = String.valueOf(Categ.getSelectedItem());
+        double x = 0;
+        String y=Precio.getText();;
+        try{
+            x = Double.valueOf(y);
+            
+            nom=Nom_app.getText();
+            dess=Descripcio.getText();
+            Repo = Repo_git.getText();
+            precio_=String.valueOf(x);
+            dessa_=Dessa.getText();
+            categoria = String.valueOf(Categ.getSelectedItem());
+            conn.insertApp(nom, precio_, dess, dessa_, Repo, categoria);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Verifica los datos", "No pongas caracteres en el precio", WARNING_MESSAGE);
+        }
     }
     
     @SuppressWarnings("unchecked")
@@ -195,8 +206,10 @@ public class AppUp extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        cargar();
-        conn.insertApp(nom, precio_, dess, dessa_, Repo, categoria);
+        try {
+            cargar();
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

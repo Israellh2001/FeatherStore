@@ -143,7 +143,7 @@ public class Perfil extends javax.swing.JInternalFrame {
                 jCheckBox2MouseClicked(evt);
             }
         });
-        jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, -1, 30));
+        jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 390, -1, 20));
 
         jLabel8.setText("Nombre :");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, -1, -1));
@@ -309,15 +309,17 @@ public class Perfil extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_Con_contraseñaKeyReleased
 
     private void jCheckBox2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCheckBox2MouseClicked
-        if(i){
-            Terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FinalFinalCheck.png")));
-            i=false;
-            trem=true;
-        }
-        else{
-            Terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Finalequis.png")));
-            i=true;
-            trem=false;
+        if(evt.getButton()==1){
+            if(i){
+                Terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FinalFinalCheck.png")));
+                i=false;
+                trem=true;
+            }
+            else{
+                Terminos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Finalequis.png")));
+                i=true;
+                trem=false;
+            }
         }
     }//GEN-LAST:event_jCheckBox2MouseClicked
 
