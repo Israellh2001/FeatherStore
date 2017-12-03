@@ -74,13 +74,11 @@ public class Menu extends javax.swing.JFrame {
         Perfil = new javax.swing.JLabel();
         Explorar_ = new javax.swing.JLabel();
         Mis_aplicaciones = new javax.swing.JLabel();
-        Pago = new javax.swing.JLabel();
         FetherDeveloper = new javax.swing.JLabel();
         Ayuda = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
-        jSeparator4 = new javax.swing.JSeparator();
         CerrarSesion = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
@@ -123,7 +121,7 @@ public class Menu extends javax.swing.JFrame {
                 PerfilMouseExited(evt);
             }
         });
-        jPanel4.add(Perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 115, 137, 49));
+        jPanel4.add(Perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 137, 49));
 
         Explorar_.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         Explorar_.setText("Explorar");
@@ -141,7 +139,7 @@ public class Menu extends javax.swing.JFrame {
                 Explorar_MouseExited(evt);
             }
         });
-        jPanel4.add(Explorar_, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 191, 137, 38));
+        jPanel4.add(Explorar_, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 137, 38));
 
         Mis_aplicaciones.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         Mis_aplicaciones.setText("Mis aplicaciones");
@@ -156,22 +154,7 @@ public class Menu extends javax.swing.JFrame {
                 Mis_aplicacionesMouseExited(evt);
             }
         });
-        jPanel4.add(Mis_aplicaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 261, 137, 41));
-
-        Pago.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        Pago.setText("Sistema de pago");
-        Pago.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Pago.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                PagoMouseMoved(evt);
-            }
-        });
-        Pago.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                PagoMouseExited(evt);
-            }
-        });
-        jPanel4.add(Pago, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 325, 137, 48));
+        jPanel4.add(Mis_aplicaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 137, 41));
 
         FetherDeveloper.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         FetherDeveloper.setText("FetaherDeveloper");
@@ -189,7 +172,7 @@ public class Menu extends javax.swing.JFrame {
                 FetherDeveloperMouseExited(evt);
             }
         });
-        jPanel4.add(FetherDeveloper, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 394, 137, 48));
+        jPanel4.add(FetherDeveloper, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 137, 48));
 
         Ayuda.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         Ayuda.setText("Ayuda/Contactanos");
@@ -206,9 +189,8 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel4.add(Ayuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 516, 137, 25));
         jPanel4.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 273, 10));
-        jPanel4.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 273, 10));
-        jPanel4.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 313, 273, 10));
-        jPanel4.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 379, 273, 9));
+        jPanel4.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 273, 10));
+        jPanel4.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 273, 10));
 
         CerrarSesion.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         CerrarSesion.setText("Cerrar Sesion");
@@ -226,9 +208,9 @@ public class Menu extends javax.swing.JFrame {
                 CerrarSesionMouseExited(evt);
             }
         });
-        jPanel4.add(CerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 464, 146, 25));
-        jPanel4.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 273, 10));
-        jPanel4.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 448, 273, 10));
+        jPanel4.add(CerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 146, 25));
+        jPanel4.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 273, 10));
+        jPanel4.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 273, 10));
         jPanel4.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 103, 273, 10));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 570));
@@ -326,8 +308,8 @@ public class Menu extends javax.swing.JFrame {
     private void Explorar_MouseExited(java.awt.event.MouseEvent evt) {Explorar_.setForeground(new java.awt.Color(0,0,0));}
     private void Mis_aplicacionesMouseMoved(java.awt.event.MouseEvent evt) {Mis_aplicaciones.setForeground(new java.awt.Color(255, 255, 255));}
     private void Mis_aplicacionesMouseExited(java.awt.event.MouseEvent evt) {Mis_aplicaciones.setForeground(new java.awt.Color(0,0,0));}
-    private void PagoMouseMoved(java.awt.event.MouseEvent evt) {Pago.setForeground(new java.awt.Color(255, 255, 255));}
-    private void PagoMouseExited(java.awt.event.MouseEvent evt) {Pago.setForeground(new java.awt.Color(0,0,0));}
+   // private void PagoMouseMoved(java.awt.event.MouseEvent evt) {Pago.setForeground(new java.awt.Color(255, 255, 255));}
+    //private void PagoMouseExited(java.awt.event.MouseEvent evt) {Pago.setForeground(new java.awt.Color(0,0,0));}
     private void FetherDeveloperMouseMoved(java.awt.event.MouseEvent evt) {if(user.getDeveloper()){FetherDeveloper.setForeground(new java.awt.Color(255, 255, 255));}else{FetherDeveloper.setCursor(Cursor.getDefaultCursor());}}
     private void FetherDeveloperMouseExited(java.awt.event.MouseEvent evt) {if(user.getDeveloper()){FetherDeveloper.setForeground(new java.awt.Color(0,0,0));}}
     private void CerrarSesionMouseMoved(java.awt.event.MouseEvent evt) {CerrarSesion.setForeground(new java.awt.Color(255, 255, 255));}
@@ -342,7 +324,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel FetherDeveloper;
     private javax.swing.JLabel Mis_aplicaciones;
     private javax.swing.JLabel Nombre2;
-    private javax.swing.JLabel Pago;
     private javax.swing.JLabel Perfil;
     private javax.swing.JLabel Username2;
     private javax.swing.JLabel jLabel20;
@@ -356,7 +337,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
