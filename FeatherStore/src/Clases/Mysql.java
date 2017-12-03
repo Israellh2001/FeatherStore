@@ -168,20 +168,17 @@ public class Mysql {
         } 
     public void mostrar_resultados(String categoria,JLabel l1,JTextArea d1){
         //Mostrando el titulo de los proyectos de la seccion seleccionada
-        String titulo="Select * from Software where Categoria='"+categoria+"';";
-        String descripcion="Select * from Software where Categoria='"+categoria+"';";
+        
+        String Query="Select * from Software where Categoria='"+categoria+"';";
         try{
             Statement st=Conexion.createStatement();
-            st.executeQuery(titulo);
-            ResultSet t= st.executeQuery(titulo);
+            st.executeQuery(Query);
+            ResultSet t= st.executeQuery(Query);
             while(t.next()){
                 l1.setText(t.getString("Nombre"));
+                d1.setText(t.getString("Descripcion"));
             ////////
-            st.executeQuery(descripcion);
-            ResultSet d=st.executeQuery(descripcion);
-            while(d.next()){
-                d1.setText(d.getString("Descripcion"));
-            }
+            
             }
         }catch(Exception e){
            JOptionPane.showMessageDialog(null, "Error en los datos", "Ocurrio un error al mostrar el titulo del juego", WARNING_MESSAGE); 

@@ -1,14 +1,20 @@
 
 package Formularios;
 
+import Clases.Mysql;
+
 public class Busqueda extends javax.swing.JInternalFrame {
 
 
     public Busqueda() {
         initComponents();
+        b();
     }
 
-
+public void b(){
+    Mysql a=new Mysql();
+    a.mostrar_resultados("Juegos", t1, d1);
+}
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

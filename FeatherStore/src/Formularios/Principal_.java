@@ -4,6 +4,8 @@ package Formularios;
 
 public class Principal_ extends javax.swing.JInternalFrame {
 
+
+    
     public Principal_() {
         initComponents();
     }
@@ -52,6 +54,9 @@ public class Principal_ extends javax.swing.JInternalFrame {
             }
         });
         Juegos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JuegosMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 JuegosMouseExited(evt);
             }
@@ -200,8 +205,12 @@ public class Principal_ extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        System.out.println("cliqueo perron");
+    //este no
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void JuegosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JuegosMouseClicked
+        
+    }//GEN-LAST:event_JuegosMouseClicked
 
       private void JuegosMouseMoved(java.awt.event.MouseEvent evt) {Juegos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
       private void JuegosMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {}

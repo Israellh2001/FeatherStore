@@ -192,7 +192,7 @@ public class Perfil extends javax.swing.JInternalFrame {
         jButton1.setBackground(new java.awt.Color(69, 85, 140));
         jButton1.setText("Guardar");
         jButton1.setBorder(null);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
