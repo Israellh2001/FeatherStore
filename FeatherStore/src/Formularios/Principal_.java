@@ -1,12 +1,13 @@
 
 package Formularios;
+import FeatherStore.Menu;
 
 
-public class Principal_ extends javax.swing.JInternalFrame {
-
-
+public class Principal_ extends javax.swing.JInternalFrame{
+    Menu x;
     
-    public Principal_() {
+    public Principal_(Menu y) {
+        x=y;
         initComponents();
     }
     private void JuegosMouseDragged(java.awt.event.MouseEvent evt) {}
@@ -209,7 +210,7 @@ public class Principal_ extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void JuegosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JuegosMouseClicked
-        //this.prro=true;
+       x.intercambio(x.ask);
     }//GEN-LAST:event_JuegosMouseClicked
 
       private void JuegosMouseMoved(java.awt.event.MouseEvent evt) {Juegos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}

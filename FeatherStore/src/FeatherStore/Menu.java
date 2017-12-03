@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 public class Menu extends javax.swing.JFrame {
     Mysql conn;
     Usuario user;
-    Busqueda ask;
+    public Busqueda ask;
     Perfil perf;
     Principal_ main;
     AppUp appup;
@@ -35,7 +35,7 @@ public class Menu extends javax.swing.JFrame {
         appup.setVisible(false);
         perf.setVisible(false);
         ask.setVisible(false);
-        main=new Principal_();
+        main=new Principal_(this);
         actual = main;
         actual.setVisible(true);
         jPanel3.add(appup);
