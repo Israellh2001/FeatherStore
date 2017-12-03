@@ -209,7 +209,7 @@ public class Principal_ extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void JuegosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JuegosMouseClicked
-        
+        this.prro=true;
     }//GEN-LAST:event_JuegosMouseClicked
 
       private void JuegosMouseMoved(java.awt.event.MouseEvent evt) {Juegos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
