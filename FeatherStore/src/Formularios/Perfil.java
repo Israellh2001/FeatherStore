@@ -155,7 +155,7 @@ public class Perfil extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, -1, -1));
 
         jLabel11.setText("Nombre de usuario :");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 230, 110, 20));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 230, 130, 20));
 
         paises.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mexico", "U.S.A", "Chile", "Peru", "Argentina", "Colombia", "España", "Canada", "Cuba", "Costa rica", "Honduras", "Brasil", "Francia", "China" }));
         jPanel1.add(paises, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, 90, 30));

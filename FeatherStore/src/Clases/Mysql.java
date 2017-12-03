@@ -51,6 +51,7 @@ public class Mysql {
          try {
             Statement st = Conexion.createStatement();
             st.executeUpdate(sql);
+            JOptionPane.showMessageDialog(null, "Listo, enhorabuena", "Aplicacion subida", WARNING_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error al Ingresar la app", WARNING_MESSAGE);
         

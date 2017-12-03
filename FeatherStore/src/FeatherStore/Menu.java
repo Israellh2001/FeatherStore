@@ -12,8 +12,10 @@ import FeatherDelevoper.AppUp;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import Formularios.Ayuda_Contacto;
 
 public class Menu extends javax.swing.JFrame {
+    Ayuda_Contacto help;
     Mysql conn;
     Usuario user;
     public Busqueda ask;
@@ -30,14 +32,17 @@ public class Menu extends javax.swing.JFrame {
         conn=new Mysql();
         conn.connection("FeatherStore","root", "");
         ask=new Busqueda();
+        help = new Ayuda_Contacto();
         appup = new AppUp();
         perf = new Perfil();
         appup.setVisible(false);
         perf.setVisible(false);
         ask.setVisible(false);
         main=new Principal_(this);
+        help.setVisible(false);
         actual = main;
         actual.setVisible(true);
+        jPanel3.add(help);
         jPanel3.add(appup);
         jPanel3.add(perf);
         jPanel3.add(main);
@@ -183,6 +188,9 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         Ayuda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AyudaMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 AyudaMouseExited(evt);
             }
@@ -301,6 +309,10 @@ public class Menu extends javax.swing.JFrame {
     private void Explorar_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Explorar_MouseClicked
         intercambio(main);
     }//GEN-LAST:event_Explorar_MouseClicked
+
+    private void AyudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AyudaMouseClicked
+        intercambio(help);
+    }//GEN-LAST:event_AyudaMouseClicked
 
     private void PerfilMouseMoved(java.awt.event.MouseEvent evt) {Perfil.setForeground(new java.awt.Color(255, 255, 255));}
     private void PerfilMouseExited(java.awt.event.MouseEvent evt) {Perfil.setForeground(new java.awt.Color(0,0,0));}
