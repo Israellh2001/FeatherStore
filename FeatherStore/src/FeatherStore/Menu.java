@@ -112,7 +112,7 @@ public class Menu extends javax.swing.JFrame {
 
         Perfil.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         Perfil.setText("Perfil");
-        Perfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Perfil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Perfil.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 PerfilMouseMoved(evt);
@@ -130,7 +130,7 @@ public class Menu extends javax.swing.JFrame {
 
         Explorar_.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         Explorar_.setText("Explorar");
-        Explorar_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Explorar_.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Explorar_.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Explorar_MouseMoved(evt);
@@ -148,7 +148,7 @@ public class Menu extends javax.swing.JFrame {
 
         Mis_aplicaciones.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         Mis_aplicaciones.setText("Mis aplicaciones");
-        Mis_aplicaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Mis_aplicaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Mis_aplicaciones.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Mis_aplicacionesMouseMoved(evt);
@@ -162,8 +162,8 @@ public class Menu extends javax.swing.JFrame {
         jPanel4.add(Mis_aplicaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 137, 41));
 
         FetherDeveloper.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        FetherDeveloper.setText("FetaherDeveloper");
-        FetherDeveloper.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        FetherDeveloper.setText("FeatherDeveloper");
+        FetherDeveloper.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         FetherDeveloper.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 FetherDeveloperMouseMoved(evt);
@@ -181,7 +181,7 @@ public class Menu extends javax.swing.JFrame {
 
         Ayuda.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         Ayuda.setText("Ayuda/Contactanos");
-        Ayuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Ayuda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Ayuda.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 AyudaMouseMoved(evt);
@@ -202,7 +202,7 @@ public class Menu extends javax.swing.JFrame {
 
         CerrarSesion.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         CerrarSesion.setText("Cerrar Sesion");
-        CerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         CerrarSesion.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 CerrarSesionMouseMoved(evt);

@@ -167,20 +167,24 @@ public class Mysql {
             JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error al registarse", WARNING_MESSAGE);
             }
         } 
-    public void mostrar_resultados(String categoria,JLabel l1,JTextArea d1){
-        //Mostrando el titulo de los proyectos de la seccion seleccionada
-        
-        String Query="Select * from Software where Categoria='"+categoria+"';";
+    public void mostrar_resultados(String categoria,JLabel l1,JLabel l2,JTextArea d1,JTextArea d2){
+        String[] titulos=new String[5];
+        String[] desc=new String[5];
         try{
+            for(int i=0;i<5;i++){
+            String Query="Select * from Software where Categoria='"+categoria+"' and idSoftware='"+i+"';";
             Statement st=Conexion.createStatement();
             st.executeQuery(Query);
             ResultSet t= st.executeQuery(Query);
             while(t.next()){
-                l1.setText(t.getString("Nombre"));
-                d1.setText(t.getString("Descripcion"));
-            ////////
-            
+                titulos[i]=t.getString("Nombre");
+                desc[i]=t.getString("Descripcion");
+                }
             }
+            l1.setText(titulos[1]);
+            d1.setText(desc[1]);
+            l2.setText(titulos[2]);
+            d2.setText(desc[2]);
         }catch(Exception e){
            JOptionPane.showMessageDialog(null, "Error en los datos", "Ocurrio un error al mostrar el titulo del juego", WARNING_MESSAGE); 
         }
