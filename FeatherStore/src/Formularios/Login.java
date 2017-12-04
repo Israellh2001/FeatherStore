@@ -352,6 +352,10 @@ public class Login extends javax.swing.JFrame {
             String contra = String.valueOf(Contraseña.getText());
        String user = Usuario.getText();
 
+              if(contra.equals("")&&user.equals("")){
+            JOptionPane.showMessageDialog(null, "Usuario incorrecto", "Reinicia la app o verifica los datos :c", INFORMATION_MESSAGE);
+       }
+              else{
        boolean x =  conn.validarLogin(user ,contra,user1);
        if(x){
             //JOptionPane.showMessageDialog(null, "Bienvenido", "Usuario Correcto", INFORMATION_MESSAGE);
@@ -365,7 +369,7 @@ public class Login extends javax.swing.JFrame {
        }
        else
             JOptionPane.showMessageDialog(null, "Usuario incorrecto", "Reinicia la app o verifica los datos :c", INFORMATION_MESSAGE);
-
+              }
         }
     }//GEN-LAST:event_ContraseñaKeyReleased
 
@@ -392,7 +396,11 @@ public class Login extends javax.swing.JFrame {
     private void IniciarsesionActionPerformed(java.awt.event.ActionEvent evt) {
        String contra = String.valueOf(Contraseña.getText());
        String user = Usuario.getText();
-
+       if(contra.equals("")&&user.equals("")){
+            JOptionPane.showMessageDialog(null, "Usuario incorrecto", "Reinicia la app o verifica los datos :c", INFORMATION_MESSAGE);
+       }
+       else{
+       
        boolean x =  conn.validarLogin(user ,contra,user1);
        if(x){
            // JOptionPane.showMessageDialog(null, "Bienvenido", "Usuario Correcto", INFORMATION_MESSAGE);
@@ -406,7 +414,7 @@ public class Login extends javax.swing.JFrame {
        }
        else
             JOptionPane.showMessageDialog(null, "Usuario incorrecto", "Reinicia la app o verifica los datos :c", INFORMATION_MESSAGE);
-
+       }
       }
 
 

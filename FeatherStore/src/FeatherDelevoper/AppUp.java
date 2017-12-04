@@ -33,7 +33,7 @@ public class AppUp extends javax.swing.JInternalFrame {
         String y=Precio.getText();;
         try{
             x = Double.valueOf(y);
-            creador=idCreador.getText();
+            //creador=idCreador.getText();
             nom=Nom_app.getText();
             dess=Descripcio.getText();
             Repo = Repo_git.getText();
@@ -87,8 +87,6 @@ public class AppUp extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        idCreador = new javax.swing.JTextField();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -113,7 +111,7 @@ public class AppUp extends javax.swing.JInternalFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 490, 70, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 70, 30));
 
         jLabel4.setText("Nuestro sistema de aplicaciónes funciona mediante Git");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
@@ -149,19 +147,19 @@ public class AppUp extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 110, -1));
 
         jLabel11.setText("Nombre :");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, -1, -1));
 
         jLabel12.setText("Precio (Dolares USA) :");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, -1, -1));
 
         jLabel13.setText("Descripción :");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 70, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, 70, -1));
 
         jLabel14.setText("Desarrolladores (id) :");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, -1, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, -1, -1));
 
         jLabel15.setText("Repositorio de Git :");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, -1, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(69, 85, 140));
         jButton2.setText("Ver");
@@ -172,25 +170,25 @@ public class AppUp extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 70, 30));
-        jPanel1.add(Nom_app, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 200, -1));
-        jPanel1.add(Precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 60, -1));
+        jPanel1.add(Nom_app, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 230, 200, -1));
+        jPanel1.add(Precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 260, 60, -1));
 
         jLabel16.setText("$");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 300, 10, -1));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, 10, -1));
 
         Descripcio.setColumns(20);
         Descripcio.setRows(5);
         jScrollPane1.setViewportView(Descripcio);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, 210, 40));
-        jPanel1.add(Dessa, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, 210, -1));
-        jPanel1.add(Repo_git, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 420, 210, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, 210, 40));
+        jPanel1.add(Dessa, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, 210, -1));
+        jPanel1.add(Repo_git, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, 210, -1));
 
         jLabel17.setText("Categoria :");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, -1, -1));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, -1, -1));
 
         Categ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Juegos", "Diseño grafico", "Desarrollo de software", "Audio video", "Otra" }));
-        jPanel1.add(Categ, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, -1, -1));
+        jPanel1.add(Categ, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, -1, -1));
 
         jLabel18.setText("ID del Developer :");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, -1));
@@ -207,10 +205,6 @@ public class AppUp extends javax.swing.JInternalFrame {
         jLabel20.setText("Nombre :");
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, -1, -1));
 
-        jLabel21.setText("ID del Developer :");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, -1, -1));
-        jPanel1.add(idCreador, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 50, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -219,7 +213,10 @@ public class AppUp extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -252,7 +249,6 @@ public class AppUp extends javax.swing.JInternalFrame {
     private javax.swing.JTextField Precio;
     private javax.swing.JTextField Repo_git;
     private javax.swing.JLabel Titulo;
-    private javax.swing.JTextField idCreador;
     private javax.swing.JLabel idDev;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -269,7 +265,6 @@ public class AppUp extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
