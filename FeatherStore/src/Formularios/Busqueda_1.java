@@ -7,6 +7,10 @@ import Clases.Usuario;
 public class Busqueda_1 extends javax.swing.JInternalFrame {
     String bus;
     Usuario us;
+    String id_id;
+    
+    public void setId(String x){id_id = x;}
+    public String getId(){return id_id;}
     public boolean comprobar = true;
     
     public String[] titulos=new String[5];
@@ -32,7 +36,7 @@ public class Busqueda_1 extends javax.swing.JInternalFrame {
     }
     public void b(){
         Mysql a=new Mysql();
-        a.mostrarMisapp(this,us);
+        a.mostrarMisapp(this,id_id);
         String x = titulos[0];
         t1.setText(x);
         x = titulos[1];

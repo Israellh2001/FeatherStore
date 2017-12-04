@@ -233,6 +233,7 @@ public class AppUp extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        main.buss_1.setId(idDev.getText());
         main.buss_1.b();
         if(main.buss_1.getCom()==false){
             main.intercambio(main.nada);}

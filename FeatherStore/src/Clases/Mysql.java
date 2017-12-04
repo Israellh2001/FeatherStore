@@ -215,14 +215,14 @@ public class Mysql {
         //crear evento de clic en la imagen, terminar de mostrar todos los datos,diseniar el jframe ese y es todo mi trabajo
     }
     
-    public void mostrarMisapp(Busqueda_1 ask, Usuario x){
+    public void mostrarMisapp(Busqueda_1 ask, String x){
         String[] titulos=new String[5];
         String[] desc=new String[5];
         String[] id = new String[5];
         String[] git = new String[5];
         String[] precio = new String[5];
         String[] desarrolladores = new String[5];
-        String idUs=x.getId();
+        String idUs=x;
         //aqui
         try{
             String Query="Select * from software where Desarrolladores="+idUs+" Order by idSoftware DESC";
