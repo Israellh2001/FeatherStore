@@ -124,21 +124,11 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Quieres modificar o eliminar alguna aplicaci&#xf3;n tuya?"/>
+            <Property name="text" type="java.lang.String" value="Quieres ver alguna aplicaci&#xf3;n tuya?"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="40" y="380" width="-1" height="20"/>
-            </Constraint>
-          </Constraints>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="En Feather pensamos en todo y te preparamos un menu personalizado"/>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="420" width="-1" height="-1"/>
+              <AbsoluteConstraints x="100" y="400" width="-1" height="20"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -280,7 +270,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="8c" green="55" red="45" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Ver/Eliminar"/>
+            <Property name="text" type="java.lang.String" value="Ver"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>

@@ -2,6 +2,7 @@
 package FeatherDelevoper;
 
 import Clases.Mysql;
+import FeatherStore.Menu;
 import Clases.Usuario;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.WARNING_MESSAGE;
@@ -10,13 +11,18 @@ import static javax.swing.JOptionPane.WARNING_MESSAGE;
 public class AppUp extends javax.swing.JInternalFrame {
     String nom,dess,Repo,precio_,categoria,dessa_;
     Mysql conn;
+    Usuario us;
+    Menu main;
     
-    public AppUp() {
+    
+    public AppUp(Menu x) {
+        main = x;
         conn = new Mysql();
         conn.connection("featherstore", "root", "");
         initComponents();
     }
     public void cargardatos(Usuario x){
+        us = x;
         idDev.setText(x.getId());
         Nombre.setText(x.getNombre());
         nom_user.setText(x.getUsername());
@@ -53,7 +59,6 @@ public class AppUp extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         Nombre = new javax.swing.JLabel();
         nom_user = new javax.swing.JLabel();
         Titulo = new javax.swing.JLabel();
@@ -111,11 +116,8 @@ public class AppUp extends javax.swing.JInternalFrame {
         jLabel5.setText("Con lo que podras subir actualizaciónes cada que quieras");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 330, -1));
 
-        jLabel6.setText("Quieres modificar o eliminar alguna aplicación tuya?");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, 20));
-
-        jLabel7.setText("En Feather pensamos en todo y te preparamos un menu personalizado");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+        jLabel6.setText("Quieres ver alguna aplicación tuya?");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, -1, 20));
 
         Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 150, 20));
@@ -157,7 +159,7 @@ public class AppUp extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(69, 85, 140));
-        jButton2.setText("Ver/Eliminar");
+        jButton2.setText("Ver");
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,7 +215,11 @@ public class AppUp extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        main.ask.b();
+        if(main.ask.getCom()==false){
+            main.intercambio(main.nada);}
+            else{
+        main.intercambio(main.ask);}
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
@@ -244,7 +250,6 @@ public class AppUp extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

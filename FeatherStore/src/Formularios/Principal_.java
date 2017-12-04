@@ -17,7 +17,6 @@ public class Principal_ extends javax.swing.JInternalFrame{
 
         jPanel1 = new javax.swing.JPanel();
         Juegos = new javax.swing.JLabel();
-        Actualizaciones = new javax.swing.JLabel();
         Desarrollo_Soft = new javax.swing.JLabel();
         Diseño_Grafico = new javax.swing.JLabel();
         Audio_Video = new javax.swing.JLabel();
@@ -25,7 +24,6 @@ public class Principal_ extends javax.swing.JInternalFrame{
         FetherStudio = new javax.swing.JLabel();
         Hardware = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -63,22 +61,6 @@ public class Principal_ extends javax.swing.JInternalFrame{
         });
         jPanel1.add(Juegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 187, 146));
 
-        Actualizaciones.setBackground(new java.awt.Color(255, 255, 255));
-        Actualizaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Actualizaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Actualizaciones_Final.png"))); // NOI18N
-        Actualizaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Actualizaciones.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                ActualizacionesMouseMoved(evt);
-            }
-        });
-        Actualizaciones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                ActualizacionesMouseExited(evt);
-            }
-        });
-        jPanel1.add(Actualizaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 170, 146));
-
         Desarrollo_Soft.setBackground(new java.awt.Color(255, 255, 255));
         Desarrollo_Soft.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Desarrollo_Soft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Progra.png"))); // NOI18N
@@ -89,6 +71,9 @@ public class Principal_ extends javax.swing.JInternalFrame{
             }
         });
         Desarrollo_Soft.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Desarrollo_SoftMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Desarrollo_SoftMouseExited(evt);
             }
@@ -105,11 +90,14 @@ public class Principal_ extends javax.swing.JInternalFrame{
             }
         });
         Diseño_Grafico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Diseño_GraficoMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Diseño_GraficoMouseExited(evt);
             }
         });
-        jPanel1.add(Diseño_Grafico, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 138, 126));
+        jPanel1.add(Diseño_Grafico, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 138, 126));
 
         Audio_Video.setBackground(new java.awt.Color(255, 255, 255));
         Audio_Video.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -121,11 +109,14 @@ public class Principal_ extends javax.swing.JInternalFrame{
             }
         });
         Audio_Video.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Audio_VideoMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Audio_VideoMouseExited(evt);
             }
         });
-        jPanel1.add(Audio_Video, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 200, 160, 126));
+        jPanel1.add(Audio_Video, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 160, 126));
 
         Info.setBackground(new java.awt.Color(255, 255, 255));
         Info.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -163,7 +154,7 @@ public class Principal_ extends javax.swing.JInternalFrame{
                 FetherStudioMouseExited(evt);
             }
         });
-        jPanel1.add(FetherStudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 285, 124));
+        jPanel1.add(FetherStudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 285, 124));
 
         Hardware.setBackground(new java.awt.Color(255, 255, 255));
         Hardware.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -190,20 +181,17 @@ public class Principal_ extends javax.swing.JInternalFrame{
         });
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 50, -1));
 
-        jLabel4.setText("Actualizaciones");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
-
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("  Desarrollo de Software");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 212, -1));
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Diseño Grafico");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, 198, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 198, -1));
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Audio y Video");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 340, 80, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 80, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 500));
 
@@ -215,7 +203,12 @@ public class Principal_ extends javax.swing.JInternalFrame{
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void JuegosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JuegosMouseClicked
-       x.intercambio(x.ask);
+        x.ask.setBus("Juegos");
+        x.ask.b();
+        if(x.ask.getCom()==false){
+            x.intercambio(x.nada);}
+            else{
+        x.intercambio(x.ask);}
     }//GEN-LAST:event_JuegosMouseClicked
 
     private void InfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InfoMouseClicked
@@ -226,11 +219,38 @@ public class Principal_ extends javax.swing.JInternalFrame{
         x.intercambio(x.info);
     }//GEN-LAST:event_FetherStudioMouseClicked
 
+    private void Desarrollo_SoftMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Desarrollo_SoftMouseClicked
+        x.ask.setBus("Desarrollo de Software");
+        x.ask.b();
+        if(x.ask.getCom()==false){
+            x.intercambio(x.nada);}
+            else{
+        x.intercambio(x.ask);}
+    }//GEN-LAST:event_Desarrollo_SoftMouseClicked
+
+    private void Diseño_GraficoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Diseño_GraficoMouseClicked
+        x.ask.setBus("Diseño Grafico");
+        x.ask.b();
+        if(x.ask.getCom()==false){
+            x.intercambio(x.nada);}
+            else{
+        x.intercambio(x.ask);}
+    }//GEN-LAST:event_Diseño_GraficoMouseClicked
+
+    private void Audio_VideoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Audio_VideoMouseClicked
+        x.ask.setBus("Audio y video");
+        x.ask.b();
+        if(x.ask.getCom()==false){
+            x.intercambio(x.nada);}
+            else{
+        x.intercambio(x.ask);}
+    }//GEN-LAST:event_Audio_VideoMouseClicked
+
       private void JuegosMouseMoved(java.awt.event.MouseEvent evt) {Juegos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
       private void JuegosMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {}
       private void JuegosMouseExited(java.awt.event.MouseEvent evt) {Juegos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-      private void ActualizacionesMouseMoved(java.awt.event.MouseEvent evt) {Actualizaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-      private void ActualizacionesMouseExited(java.awt.event.MouseEvent evt) {Actualizaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
+     // private void ActualizacionesMouseMoved(java.awt.event.MouseEvent evt) {Actualizaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
+     // private void ActualizacionesMouseExited(java.awt.event.MouseEvent evt) {Actualizaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
       private void Desarrollo_SoftMouseMoved(java.awt.event.MouseEvent evt) {Desarrollo_Soft.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
       private void Desarrollo_SoftMouseExited(java.awt.event.MouseEvent evt) {Desarrollo_Soft.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
       private void Diseño_GraficoMouseMoved(java.awt.event.MouseEvent evt) {Diseño_Grafico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
@@ -248,7 +268,6 @@ public class Principal_ extends javax.swing.JInternalFrame{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Actualizaciones;
     private javax.swing.JLabel Audio_Video;
     private javax.swing.JLabel Desarrollo_Soft;
     private javax.swing.JLabel Diseño_Grafico;
@@ -257,7 +276,6 @@ public class Principal_ extends javax.swing.JInternalFrame{
     private javax.swing.JLabel Info;
     private javax.swing.JLabel Juegos;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

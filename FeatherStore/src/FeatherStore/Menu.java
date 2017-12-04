@@ -14,12 +14,14 @@ import Formularios.Ayuda_Contacto;
 
 public class Menu extends javax.swing.JFrame {
     Ayuda_Contacto help;
+    public Busqueda_1 buss_1;
     Mysql conn;
     Usuario user;
     public Busqueda ask;
     Perfil perf;
     Principal_ main;
     AppUp appup;
+    public Nada nada;
     public Sobre_App appinfo;
     public Sobre_Feather info;
     
@@ -35,8 +37,10 @@ public class Menu extends javax.swing.JFrame {
         conn=new Mysql();
         conn.connection("FeatherStore","root", "");
         ask=new Busqueda();
+        buss_1 = new Busqueda_1(user);
         help = new Ayuda_Contacto();
-        appup = new AppUp();
+        appup = new AppUp(this);
+        nada = new Nada();
         perf = new Perfil();
         info = new Sobre_Feather();
         appinfo = new Sobre_App();
@@ -45,10 +49,14 @@ public class Menu extends javax.swing.JFrame {
         ask.setVisible(false);
         info.setVisible(false);
         appinfo.setVisible(false);
+        nada.setVisible(false);
         main=new Principal_(this);
         help.setVisible(false);
         actual = main;
         actual.setVisible(true);
+        buss_1.setVisible(false);
+        jPanel3.add(nada);
+        jPanel3.add(buss_1);
         jPanel3.add(info);
         jPanel3.add(appinfo);
         jPanel3.add(help);
@@ -290,7 +298,12 @@ public class Menu extends javax.swing.JFrame {
 
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
         if(evt.getKeyCode()==10){
-            intercambio(ask);
+            ask.setBus(jTextField1.getText());
+            ask.b();
+            if(ask.getCom()==false){
+                intercambio(nada);}
+            else{
+                intercambio(ask);}
         }
     }//GEN-LAST:event_jTextField1KeyReleased
 

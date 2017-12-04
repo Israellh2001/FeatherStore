@@ -2,9 +2,11 @@
 package Formularios;
 
 import Clases.Mysql;
+import Clases.Usuario;
 
-public class Busqueda extends javax.swing.JInternalFrame {
+public class Busqueda_1 extends javax.swing.JInternalFrame {
     String bus;
+    Usuario us;
     public boolean comprobar = true;
     
     public String[] titulos=new String[5];
@@ -12,7 +14,8 @@ public class Busqueda extends javax.swing.JInternalFrame {
     public String[] id = new String[5];
     public String[] git = new String[5];
 
-    public Busqueda() {
+    public Busqueda_1(Usuario g) {
+        us = g;
         initComponents();
         //setBackground(new java.awt.Color(255, 255, 255));
     }
@@ -27,7 +30,7 @@ public class Busqueda extends javax.swing.JInternalFrame {
     }
     public void b(){
         Mysql a=new Mysql();
-        a.mostrar_resultados(bus, this);
+        a.mostrarMisapp(this,us);
         String x = titulos[0];
         t1.setText(x);
         x = titulos[1];

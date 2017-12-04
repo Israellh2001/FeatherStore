@@ -1,5 +1,7 @@
 package Clases;
 
+import Formularios.Busqueda;
+import Formularios.Busqueda_1;
 import com.mysql.jdbc.Connection;
 import java.sql.*;
 import java.util.logging.Logger;
@@ -37,12 +39,18 @@ public class Mysql {
             JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error :c", WARNING_MESSAGE);
         }
     }
-    public void Query(String query){
+    public void EliminarUs(Usuario x){
+        String sql="";
         try {
+            if(x.Developer){
+                sql="DELETE FROM desarrolladores WHERE idDesarrolladores = "+x.getId();
+            }else{
+                sql="DELETE FROM usuarios WHERE idUsuarios = "+x.getId();
+            }
             Statement st = Conexion.createStatement();
-            st.execute(query);
+            st.execute(sql);
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error :c", WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error al borrar tu usuario", WARNING_MESSAGE);
         }
     }
     public void insertApp(String nom, String precio, String Descripcion, String Dessa, String repo, String categ){
@@ -167,24 +175,81 @@ public class Mysql {
             JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error al registarse", WARNING_MESSAGE);
             }
         } 
-    public void mostrar_resultados(String categoria,JLabel l1,JLabel l2,JTextArea d1,JTextArea d2){
+    public void mostrar_resultados(String categoria,Busqueda ask){
         String[] titulos=new String[5];
         String[] desc=new String[5];
+        String[] id = new String[5];
+        String[] git = new String[5];
+        
         try{
-            for(int i=0;i<5;i++){
-            String Query="Select * from Software where Categoria='"+categoria+"' and idSoftware='"+i+"';";
+            String Query="Select * from software where Categoria='"+categoria+"'"+" Order by idSoftware DESC";
+           // System.out.println(Query);
             Statement st=Conexion.createStatement();
             st.executeQuery(Query);
             ResultSet t= st.executeQuery(Query);
-            while(t.next()){
-                titulos[i]=t.getString("Nombre");
-                desc[i]=t.getString("Descripcion");
+            for(int y=0;y<5;y++){
+            if(t.next()){
+               // for(int y=0;y<5;y++){
+                    titulos[y]=t.getString("Nombre");
+                    desc[y]=t.getString("Descripcion");
+                    git[y]=t.getString("Repo_git");
+                    id[y]=t.getString("idSoftware");
                 }
             }
-            l1.setText(titulos[1]);
-            d1.setText(desc[1]);
-            l2.setText(titulos[2]);
-            d2.setText(desc[2]);
+            if(t.last()){
+                ask.setCom(true);
+            }
+            else{
+                ask.setCom(false);   
+            }
+            for(int i=0;i<5;i++){
+              // System.out.println(titulos[i]+"__"+id[i]+"___"+desc[i]+"____"+git[i]);
+               ask.desc[i] = desc[i];
+               ask.id[i] = id[i];
+               ask.git[i] = git[i];
+               ask.titulos[i] = titulos[i];
+            }
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null, "Error en los datos", "Ocurrio un error al mostrar el titulo del juego", WARNING_MESSAGE); 
+        }
+        //crear evento de clic en la imagen, terminar de mostrar todos los datos,diseniar el jframe ese y es todo mi trabajo
+    }
+    
+    public void mostrarMisapp(Busqueda_1 ask, Usuario x){
+        String[] titulos=new String[5];
+        String[] desc=new String[5];
+        String[] id = new String[5];
+        String[] git = new String[5];
+        String idUs=x.getId();
+        
+        try{
+            String Query="Select * from software where Desarrolladores="+idUs+" Order by idSoftware DESC";
+            System.out.println(Query);
+            Statement st=Conexion.createStatement();
+            st.executeQuery(Query);
+            ResultSet t= st.executeQuery(Query);
+            for(int y=0;y<5;y++){
+            if(t.next()){
+               // for(int y=0;y<5;y++){
+                    titulos[y]=t.getString("Nombre");
+                    desc[y]=t.getString("Descripcion");
+                    git[y]=t.getString("Repo_git");
+                    id[y]=t.getString("idSoftware");
+                }
+            }
+            if(t.last()){
+                ask.setCom(true);
+            }
+            else{
+                ask.setCom(false);   
+            }
+            for(int i=0;i<5;i++){
+              // System.out.println(titulos[i]+"__"+id[i]+"___"+desc[i]+"____"+git[i]);
+               ask.desc[i] = desc[i];
+               ask.id[i] = id[i];
+               ask.git[i] = git[i];
+               ask.titulos[i] = titulos[i];
+            }
         }catch(Exception e){
            JOptionPane.showMessageDialog(null, "Error en los datos", "Ocurrio un error al mostrar el titulo del juego", WARNING_MESSAGE); 
         }

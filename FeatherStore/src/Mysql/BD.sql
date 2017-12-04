@@ -60,3 +60,8 @@ CREATE table featherstore.Software(
     Categoria varchar(60)
 );
 
+Create table usuarios_has_Soft(
+    idUsuarios int not null,
+    idSoftware int not null
+);
+

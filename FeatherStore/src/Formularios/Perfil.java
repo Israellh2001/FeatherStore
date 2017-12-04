@@ -10,7 +10,7 @@ public class Perfil extends javax.swing.JInternalFrame {
     boolean nom = false,contra=false,i=true,trem=false;
     Mysql conn;
     public String nombre_,apellidos_,contraseña_,correo_,conn_contraseña_,nom_usuario_,pais,NOMBRE,Contraseña_prron,id;
-
+    Usuario us;
     
     public Perfil(){
         conn = new Mysql();
@@ -29,6 +29,7 @@ public class Perfil extends javax.swing.JInternalFrame {
         NOMBRE = nombre_+" "+apellidos_;
     }
     public void cargarUser(Usuario x){
+        us = x;
         jLabel14.setVisible(false);
         Titulo.setVisible(false);
         if(x.getDeveloper()){
@@ -86,6 +87,7 @@ public class Perfil extends javax.swing.JInternalFrame {
         Terminos = new javax.swing.JLabel();
         validar_con = new javax.swing.JLabel();
         validar_nom = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
@@ -228,6 +230,16 @@ public class Perfil extends javax.swing.JInternalFrame {
         validar_nom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Finalequis.png"))); // NOI18N
         jPanel1.add(validar_nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 230, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(69, 85, 140));
+        jButton2.setText("Borrar perfil");
+        jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 70, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -323,6 +335,12 @@ public class Perfil extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jCheckBox2MouseClicked
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        conn.EliminarUs(us);
+        JOptionPane.showMessageDialog(null, "Por favor cierre la app", "Se ah eliminado el perfil", WARNING_MESSAGE);
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField Con_contraseña;
@@ -336,6 +354,7 @@ public class Perfil extends javax.swing.JInternalFrame {
     private javax.swing.JPasswordField contraseña;
     private javax.swing.JTextField correo_elc;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JInternalFrame jInternalFrame1;
