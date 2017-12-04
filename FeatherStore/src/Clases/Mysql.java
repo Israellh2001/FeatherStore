@@ -54,7 +54,7 @@ public class Mysql {
         }
     }
     public void insertApp(String creador,String nom, String precio, String Descripcion, String Dessa, String repo, String categ){
-        String sql = "Insert Into software(idCreador,Nombre,Precio,Descripcion,Desarrolladores,Repo_Git,Categoria) values("+"'"+creador+"'"+","+"'"+nom+"'"+","+"'"+precio+"'"+","+"'"+Descripcion+"'"+","+"'"+Dessa+"'"+","+"'"+repo+"'"+","+"'"+categ+"'"+")";
+        String sql = "Insert Into software(Nombre,Precio,Descripcion,Desarrolladores,Repo_Git,Categoria) values("+"'"+nom+"'"+","+"'"+precio+"'"+","+"'"+Descripcion+"'"+","+"'"+Dessa+"'"+","+"'"+repo+"'"+","+"'"+categ+"'"+")";
         // System.out.println(sql);
          try {
             Statement st = Conexion.createStatement();
@@ -226,7 +226,7 @@ public class Mysql {
         //aqui
         try{
             String Query="Select * from software where Desarrolladores="+idUs+" Order by idSoftware DESC";
-            System.out.println(Query);
+            //System.out.println(Query);
             Statement st=Conexion.createStatement();
             st.executeQuery(Query);
             ResultSet t= st.executeQuery(Query);
