@@ -53,8 +53,8 @@ public class Mysql {
             JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "Ocurrio un error al borrar tu usuario", WARNING_MESSAGE);
         }
     }
-    public void insertApp(String nom, String precio, String Descripcion, String Dessa, String repo, String categ){
-        String sql = "Insert Into software(Nombre,Precio,Descripcion,Desarrolladores,Repo_Git,Categoria) values("+"'"+nom+"'"+","+"'"+precio+"'"+","+"'"+Descripcion+"'"+","+"'"+Dessa+"'"+","+"'"+repo+"'"+","+"'"+categ+"'"+")";
+    public void insertApp(String creador,String nom, String precio, String Descripcion, String Dessa, String repo, String categ){
+        String sql = "Insert Into software(idCreador,Nombre,Precio,Descripcion,Desarrolladores,Repo_Git,Categoria) values("+"'"+creador+"'"+","+"'"+nom+"'"+","+"'"+precio+"'"+","+"'"+Descripcion+"'"+","+"'"+Dessa+"'"+","+"'"+repo+"'"+","+"'"+categ+"'"+")";
         // System.out.println(sql);
          try {
             Statement st = Conexion.createStatement();
@@ -220,6 +220,8 @@ public class Mysql {
         String[] desc=new String[5];
         String[] id = new String[5];
         String[] git = new String[5];
+        String[] precio = new String[5];
+        String[] desarrolladores = new String[5];
         String idUs=x.getId();
         
         try{
@@ -235,6 +237,8 @@ public class Mysql {
                     desc[y]=t.getString("Descripcion");
                     git[y]=t.getString("Repo_git");
                     id[y]=t.getString("idSoftware");
+                    precio[y]=t.getString("Precio");
+                    desarrolladores[y]=t.getString("Desarrolladores");
                 }
             }
             if(t.last()){
@@ -248,6 +252,8 @@ public class Mysql {
                ask.id[i] = id[i];
                ask.git[i] = git[i];
                ask.titulos[i] = titulos[i];
+               ask.precio[i] = titulos[i];
+               ask.desarrolladores[i] = titulos[i];
             }
         }catch(Exception e){
            JOptionPane.showMessageDialog(null, "Error en los datos", "Ocurrio un error al mostrar el titulo del juego", WARNING_MESSAGE); 

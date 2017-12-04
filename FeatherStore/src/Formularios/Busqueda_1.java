@@ -13,7 +13,9 @@ public class Busqueda_1 extends javax.swing.JInternalFrame {
     public String[] desc=new String[5];
     public String[] id = new String[5];
     public String[] git = new String[5];
-
+    public String[] precio = new String[5];
+    public String[] desarrolladores = new String[5];
+    
     public Busqueda_1(Usuario g) {
         us = g;
         initComponents();
@@ -74,8 +76,28 @@ public class Busqueda_1 extends javax.swing.JInternalFrame {
         id4.setText(x);
         x = id[4];
         id5.setText(x);
-        
-        
+        /////////////////////////7
+        x = precio[0];
+        p1.setText(x);
+        x = precio[1];
+        p2.setText(x);
+        x = precio[2];
+        p3.setText(x);
+        x = precio[3];
+        p4.setText(x);
+        x = precio[4];
+        p5.setText(x);
+        /////////////////////////7
+        x = desarrolladores[0];
+        de1.setText(x);
+        x = desarrolladores[1];
+        de2.setText(x);
+        x = desarrolladores[2];
+        de3.setText(x);
+        x = desarrolladores[3];
+        de4.setText(x);
+        x = desarrolladores[4];
+        de5.setText(x);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -98,22 +120,32 @@ public class Busqueda_1 extends javax.swing.JInternalFrame {
         d1 = new javax.swing.JTextArea();
         id1 = new javax.swing.JLabel();
         git1 = new javax.swing.JLabel();
+        de1 = new javax.swing.JLabel();
+        p1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         d3_ = new javax.swing.JTextArea();
         t3_ = new javax.swing.JLabel();
         id3 = new javax.swing.JLabel();
         git3 = new javax.swing.JLabel();
+        p3 = new javax.swing.JLabel();
+        de3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         d5 = new javax.swing.JTextArea();
         t5 = new javax.swing.JLabel();
         id5 = new javax.swing.JLabel();
         git5 = new javax.swing.JLabel();
+        de5 = new javax.swing.JLabel();
+        p5 = new javax.swing.JLabel();
         id2 = new javax.swing.JLabel();
         id4 = new javax.swing.JLabel();
         git2 = new javax.swing.JLabel();
         git4 = new javax.swing.JLabel();
+        de2 = new javax.swing.JLabel();
+        p2 = new javax.swing.JLabel();
+        p4 = new javax.swing.JLabel();
+        de4 = new javax.swing.JLabel();
 
         t3.setText("Hola mundo");
 
@@ -159,13 +191,19 @@ public class Busqueda_1 extends javax.swing.JInternalFrame {
         d1.setRows(5);
         jScrollPane5.setViewportView(d1);
 
-        jPanel2.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 430, 130));
+        jPanel2.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 430, 130));
 
         id1.setText("jLabel2");
-        jPanel2.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
+        jPanel2.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
         git1.setText("jLabel6");
-        jPanel2.add(git1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 40, -1, -1));
+        jPanel2.add(git1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, -1, -1));
+
+        de1.setText("jLabel2");
+        jPanel2.add(de1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, -1, -1));
+
+        p1.setText("jLabel1");
+        jPanel2.add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 180));
 
@@ -187,6 +225,12 @@ public class Busqueda_1 extends javax.swing.JInternalFrame {
         git3.setText("jLabel8");
         jPanel3.add(git3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, -1, -1));
 
+        p3.setText("jLabel1");
+        jPanel3.add(p3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, -1, -1));
+
+        de3.setText("jLabel2");
+        jPanel3.add(de3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 100, -1, -1));
+
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 830, 220));
 
         jPanel4.setBackground(new java.awt.Color(69, 85, 140));
@@ -207,6 +251,12 @@ public class Busqueda_1 extends javax.swing.JInternalFrame {
         git5.setText("jLabel10");
         jPanel4.add(git5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, -1, -1));
 
+        de5.setText("jLabel2");
+        jPanel4.add(de5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 110, -1, -1));
+
+        p5.setText("jLabel1");
+        jPanel4.add(p5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, -1, -1));
+
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 800, 830, 170));
 
         id2.setText("jLabel3");
@@ -220,6 +270,18 @@ public class Busqueda_1 extends javax.swing.JInternalFrame {
 
         git4.setText("jLabel9");
         jPanel1.add(git4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 640, -1, -1));
+
+        de2.setText("jLabel2");
+        jPanel1.add(de2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, -1, -1));
+
+        p2.setText("jLabel1");
+        jPanel1.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 280, -1, -1));
+
+        p4.setText("jLabel1");
+        jPanel1.add(p4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 670, -1, -1));
+
+        de4.setText("jLabel2");
+        jPanel1.add(de4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 700, -1, -1));
 
         jScrollPane4.setViewportView(jPanel1);
 
@@ -245,6 +307,11 @@ public class Busqueda_1 extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea d3_;
     private javax.swing.JTextArea d4;
     private javax.swing.JTextArea d5;
+    private javax.swing.JLabel de1;
+    private javax.swing.JLabel de2;
+    private javax.swing.JLabel de3;
+    private javax.swing.JLabel de4;
+    private javax.swing.JLabel de5;
     private javax.swing.JLabel git1;
     private javax.swing.JLabel git2;
     private javax.swing.JLabel git3;
@@ -266,6 +333,11 @@ public class Busqueda_1 extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JLabel p1;
+    private javax.swing.JLabel p2;
+    private javax.swing.JLabel p3;
+    private javax.swing.JLabel p4;
+    private javax.swing.JLabel p5;
     private javax.swing.JLabel t1;
     private javax.swing.JLabel t2;
     private javax.swing.JLabel t3;

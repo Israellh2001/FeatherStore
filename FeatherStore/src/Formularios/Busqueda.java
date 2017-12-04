@@ -162,7 +162,7 @@ public class Busqueda extends javax.swing.JInternalFrame {
         jPanel2.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
         git1.setText("jLabel6");
-        jPanel2.add(git1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 40, -1, -1));
+        jPanel2.add(git1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 180));
 
