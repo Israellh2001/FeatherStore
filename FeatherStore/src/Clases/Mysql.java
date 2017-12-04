@@ -254,6 +254,7 @@ public class Mysql {
                ask.titulos[i] = titulos[i];
                ask.precio[i] = titulos[i];
                ask.desarrolladores[i] = titulos[i];
+               
             }
         }catch(Exception e){
            JOptionPane.showMessageDialog(null, "Error en los datos", "Ocurrio un error al mostrar el titulo del juego", WARNING_MESSAGE); 

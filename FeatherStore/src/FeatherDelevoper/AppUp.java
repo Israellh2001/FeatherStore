@@ -238,6 +238,7 @@ public class AppUp extends javax.swing.JInternalFrame {
             main.intercambio(main.nada);}
             else{
         main.intercambio(main.ask);}
+        //aqui prro
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
