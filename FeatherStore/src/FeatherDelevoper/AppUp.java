@@ -111,7 +111,7 @@ public class AppUp extends javax.swing.JInternalFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 70, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 440, 70, 30));
 
         jLabel4.setText("Nuestro sistema de aplicaciónes funciona mediante Git");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
@@ -153,13 +153,13 @@ public class AppUp extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, -1, -1));
 
         jLabel13.setText("Descripción :");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, 70, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 80, -1));
 
         jLabel14.setText("Desarrolladores (id) :");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, -1, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, -1));
 
         jLabel15.setText("Repositorio de Git :");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, -1, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(69, 85, 140));
         jButton2.setText("Ver");
@@ -180,15 +180,15 @@ public class AppUp extends javax.swing.JInternalFrame {
         Descripcio.setRows(5);
         jScrollPane1.setViewportView(Descripcio);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, 210, 40));
-        jPanel1.add(Dessa, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, 210, -1));
-        jPanel1.add(Repo_git, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, 210, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, 210, 40));
+        jPanel1.add(Dessa, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 340, 210, -1));
+        jPanel1.add(Repo_git, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 210, -1));
 
         jLabel17.setText("Categoria :");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, -1, -1));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, -1, -1));
 
         Categ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Juegos", "Diseño grafico", "Desarrollo de software", "Audio video", "Otra" }));
-        jPanel1.add(Categ, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, -1, -1));
+        jPanel1.add(Categ, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, -1, -1));
 
         jLabel18.setText("ID del Developer :");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, -1));
@@ -213,10 +213,7 @@ public class AppUp extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
