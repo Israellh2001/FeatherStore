@@ -84,6 +84,9 @@ public class AppUp extends javax.swing.JInternalFrame {
         Categ = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         idDev = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -188,10 +191,19 @@ public class AppUp extends javax.swing.JInternalFrame {
         jPanel1.add(Categ, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, -1, -1));
 
         jLabel18.setText("idDeveloper :");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 154, -1, 10));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, -1));
 
         idDev.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(idDev, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, 150, 20));
+
+        jLabel7.setText("Titulo :");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, -1, -1));
+
+        jLabel19.setText("Nombre de usuario :");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, -1, -1));
+
+        jLabel20.setText("Nombre :");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -245,11 +257,14 @@ public class AppUp extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

@@ -118,6 +118,7 @@ public class Principal_ extends javax.swing.JInternalFrame{
         jPanel1.add(Audio_Video, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 30, 160, 126));
 
         Info.setBackground(new java.awt.Color(255, 255, 255));
+        Info.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         Info.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Info.setText("Sobre la aplicación");
         Info.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -137,6 +138,7 @@ public class Principal_ extends javax.swing.JInternalFrame{
         jPanel1.add(Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 260, 124));
 
         FetherStudio.setBackground(new java.awt.Color(255, 255, 255));
+        FetherStudio.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         FetherStudio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FetherStudio.setText("Sobre FetherStudio");
         FetherStudio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -153,8 +155,9 @@ public class Principal_ extends javax.swing.JInternalFrame{
                 FetherStudioMouseExited(evt);
             }
         });
-        jPanel1.add(FetherStudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 285, 124));
+        jPanel1.add(FetherStudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, 285, 124));
 
+        jLabel1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Juegos");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -164,17 +167,20 @@ public class Principal_ extends javax.swing.JInternalFrame{
         });
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 50, -1));
 
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("  Desarrollo de Software");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 212, -1));
 
+        jLabel7.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Diseño Grafico");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 198, -1));
 
+        jLabel8.setFont(new java.awt.Font("Vivaldi", 1, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Audio y Video");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 80, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 160, 100, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 500));
 

@@ -125,7 +125,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel4.add(Nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 11, 150, 59));
         jPanel4.add(Username2, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 76, 202, 15));
 
-        Perfil.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        Perfil.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         Perfil.setText("Perfil");
         Perfil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Perfil.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -143,7 +143,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel4.add(Perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 137, 49));
 
-        Explorar_.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        Explorar_.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         Explorar_.setText("Explorar");
         Explorar_.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Explorar_.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -161,7 +161,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel4.add(Explorar_, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 137, 38));
 
-        FetherDeveloper.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        FetherDeveloper.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         FetherDeveloper.setText("FeatherDeveloper");
         FetherDeveloper.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         FetherDeveloper.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -177,9 +177,9 @@ public class Menu extends javax.swing.JFrame {
                 FetherDeveloperMouseExited(evt);
             }
         });
-        jPanel4.add(FetherDeveloper, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 137, 48));
+        jPanel4.add(FetherDeveloper, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 137, 48));
 
-        Ayuda.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        Ayuda.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         Ayuda.setText("Ayuda/Contactanos");
         Ayuda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Ayuda.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -195,11 +195,11 @@ public class Menu extends javax.swing.JFrame {
                 AyudaMouseExited(evt);
             }
         });
-        jPanel4.add(Ayuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 137, 25));
+        jPanel4.add(Ayuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, 137, 25));
         jPanel4.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 273, 10));
         jPanel4.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 273, 10));
 
-        CerrarSesion.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        CerrarSesion.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         CerrarSesion.setText("Cerrar Sesion");
         CerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         CerrarSesion.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -215,7 +215,7 @@ public class Menu extends javax.swing.JFrame {
                 CerrarSesionMouseExited(evt);
             }
         });
-        jPanel4.add(CerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 146, 25));
+        jPanel4.add(CerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 146, 25));
         jPanel4.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 273, 10));
         jPanel4.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 273, 10));
         jPanel4.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 103, 273, 10));
