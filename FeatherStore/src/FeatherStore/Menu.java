@@ -11,6 +11,8 @@ import FeatherDelevoper.AppUp;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
 import Formularios.Ayuda_Contacto;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.WARNING_MESSAGE;
 
 public class Menu extends javax.swing.JFrame {
     Ayuda_Contacto help;
@@ -306,8 +308,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel20MouseClicked
 
     private void FetherDeveloperMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FetherDeveloperMouseClicked
-        appup.cargardatos(user);
-        intercambio(appup);
+       if(user.getDeveloper()){
+            appup.cargardatos(user);
+            intercambio(appup);
+        }
+       else{
+            JOptionPane.showMessageDialog(null, "Reintenta mas tarde", "No puedes acceder si no eres Developer", WARNING_MESSAGE);
+       }
     }//GEN-LAST:event_FetherDeveloperMouseClicked
 
     private void Explorar_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Explorar_MouseClicked
