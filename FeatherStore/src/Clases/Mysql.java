@@ -223,7 +223,7 @@ public class Mysql {
         String[] precio = new String[5];
         String[] desarrolladores = new String[5];
         String idUs=x.getId();
-        
+        //aqui
         try{
             String Query="Select * from software where Desarrolladores="+idUs+" Order by idSoftware DESC";
             System.out.println(Query);
