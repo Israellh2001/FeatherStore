@@ -244,7 +244,6 @@ public class Mysql {
                 ask.setCom(false);   
             }
             for(int i=0;i<5;i++){
-              // System.out.println(titulos[i]+"__"+id[i]+"___"+desc[i]+"____"+git[i]);
                ask.desc[i] = desc[i];
                ask.id[i] = id[i];
                ask.git[i] = git[i];

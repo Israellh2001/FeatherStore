@@ -22,7 +22,6 @@ public class Principal_ extends javax.swing.JInternalFrame{
         Audio_Video = new javax.swing.JLabel();
         Info = new javax.swing.JLabel();
         FetherStudio = new javax.swing.JLabel();
-        Hardware = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -135,7 +134,7 @@ public class Principal_ extends javax.swing.JInternalFrame{
                 InfoMouseExited(evt);
             }
         });
-        jPanel1.add(Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 260, 124));
+        jPanel1.add(Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 260, 124));
 
         FetherStudio.setBackground(new java.awt.Color(255, 255, 255));
         FetherStudio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -154,23 +153,7 @@ public class Principal_ extends javax.swing.JInternalFrame{
                 FetherStudioMouseExited(evt);
             }
         });
-        jPanel1.add(FetherStudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 285, 124));
-
-        Hardware.setBackground(new java.awt.Color(255, 255, 255));
-        Hardware.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Hardware.setText("Sobre Hardware");
-        Hardware.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Hardware.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                HardwareMouseMoved(evt);
-            }
-        });
-        Hardware.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                HardwareMouseExited(evt);
-            }
-        });
-        jPanel1.add(Hardware, new org.netbeans.lib.awtextra.AbsoluteConstraints(593, 360, 230, 124));
+        jPanel1.add(FetherStudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 285, 124));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Juegos");
@@ -261,8 +244,8 @@ public class Principal_ extends javax.swing.JInternalFrame{
       private void InfoMouseExited(java.awt.event.MouseEvent evt) {Info.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
       private void FetherStudioMouseMoved(java.awt.event.MouseEvent evt) {FetherStudio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
       private void FetherStudioMouseExited(java.awt.event.MouseEvent evt) {FetherStudio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
-      private void HardwareMouseMoved(java.awt.event.MouseEvent evt) {Hardware.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
-      private void HardwareMouseExited(java.awt.event.MouseEvent evt) {Hardware.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
+     // private void HardwareMouseMoved(java.awt.event.MouseEvent evt) {Hardware.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
+     // private void HardwareMouseExited(java.awt.event.MouseEvent evt) {Hardware.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
      // private void AyudaMouseMoved(java.awt.event.MouseEvent evt) {Ayuda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(69,85,140)));}
      // private void AyudaMouseExited(java.awt.event.MouseEvent evt) {Ayuda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255,255,255)));}
 
@@ -272,7 +255,6 @@ public class Principal_ extends javax.swing.JInternalFrame{
     private javax.swing.JLabel Desarrollo_Soft;
     private javax.swing.JLabel Diseño_Grafico;
     private javax.swing.JLabel FetherStudio;
-    private javax.swing.JLabel Hardware;
     private javax.swing.JLabel Info;
     private javax.swing.JLabel Juegos;
     private javax.swing.JLabel jLabel1;
